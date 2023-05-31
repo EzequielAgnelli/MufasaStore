@@ -13,14 +13,39 @@
     <header>
         <img src="./Navbar/Logo 2.png" alt="Logo">
         <nav class="navbar">
+
+            <label  for="menu-toggle" class="menu-label">
+                <img src="./Navbar/Menu Icon.png" alt="Icono del Menu">
+            </label>
+            <input type="checkbox" id="menu-toggle">
+
             <ul class="navbar-links">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="#portada">Inicio</a></li>
                 <li><a href="#">Mujer</a></li>
                 <li><a href="#">Hombre</a></li>
-                <li><a href="#">Accesorios</a></li>
+                <li><a href="#new-products">Nuevos Ingresos</a></li>
             </ul>
         </nav>
-        <img src="./Navbar/Carrito de Compras.png" alt="Shopping Cart" class="cart-img">
+
+        <label for="cart-toggle" class="cart-label">
+            <img src="./Navbar/Carrito de Compra.png" alt="Shopping Cart" class="cart-img">
+        </label>
+        <input type="checkbox" id="cart-toggle">
+
+        <div class="cart">
+            <h2>Tus Productos</h2>
+            <div class="cart-item">
+                <img src="./Navbar/favicon-32x32.png" alt="">
+                <div class="item-info">
+                    <h3 class="item-name">Nike Air Max SC</h3>
+                    <p class="item-bid">Productos Actuales</p>
+                    <span class="item-price">$39.999</span>
+                </div>
+                <div class="item-handler">
+
+                </div>
+            </div>
+        </div>
     </header>
 
                                                                     <!-- PORTADA SECTION -->
@@ -30,9 +55,9 @@
                 <h1>Mejora tus días</h1>
                 <div class="separador"></div>
                 <p>Disfruta de nuestras zapatillas con descuentos de hasta -40% todos los Sabados</p>
-                <a href="#" class="info-a">Mas Vendidos</a>
+                <a href="#most-sold" class="info-a">Mas Vendidos</a>
                 <div class="portada-info-bot">
-                    <a href="#" class="info-bottom">¿Necesitas ayuda?</a>
+                    <a href="#footer" class="info-bottom">¿Necesitas ayuda?</a>
                 </div>
             </div>
         </section>
@@ -216,9 +241,42 @@
     </main>
                                                                         <!-- FOOTER -->
     <footer id="footer">
-        <div class="">
-
+        <div class="container">
+        <div class="container-links">
+            <h2>Contacto</h2>
+            <ul>
+                <li>ventaonlinemufasa@gmail.com</li>
+                <li>11 2466-4225</li>
+                <li>(11) 6843-3110</li>
+                <li>Lunes a Viernes de 8 a 22hs</li>
+            </ul>
         </div>
+
+        <div class="container-links">
+        <h2>¿Necesitas Ayuda?</h2>
+        <ul>
+            <li><a href="#">Locales</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Estado de mi Pedido</a></li>
+            <li><a href="#">Terminos y Condiciones</a></li>
+            <li><a href="#">Cambios y Devoluciones</a></li>
+            <li><a href="#">Defensa del Consumidor</a></li>
+            <li><a href="#">Rembolsos</a></li>  
+        </ul>
+    </div>
+    
+    <div class="container-links">
+        <ul>
+            <a href="#" class="compra">Arrepentimiento de Compra</a>
+        </ul>
+    </div>
+    </div>
+
+    <div class="socials">
+        <a href="https://www.instagram.com/" target="_blank"><img src="./Footer-imgs/Instagram 2.png" alt=""></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="./Footer-imgs/Facebook 2.png" alt="Facebook Logo"></a>
+        <a href="https://www.youtube.com/" target="_blank"><img src="./Footer-imgs/Youtube 2.png" alt="Youtube Logo"></a>
+</div>
     </footer>
 </body>
 </html>

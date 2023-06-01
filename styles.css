@@ -668,15 +668,16 @@ header img {
 }
 
 .catalogue-info p {
-    width: 70%;
+    width: 73%;
     max-width: 600px;
     font-weight: 800;
     font-size: 18px;
 }
 
 .catalogue-info a {
-    width: 35%;
+    width: 37%;
     margin-bottom: 7px;
+    text-align: center;
 }
 
 .catalogue-image {
@@ -718,5 +719,31 @@ header img {
 .info-product_top h4 {
     font-size: 24px;
 }
-                            /*  */
+                            /* INFO-HELP */
+#info-help {
+    background-color: transparent;
+}
+.info-container {
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    flex-wrap: wrap;
+}
+
+.info-images {
+    flex-direction: column;
+}
+
+.info-images p {
+    width: 95%;
+    font-size: 18px;
+    max-width: 700px;
+    font-weight: 800;
+}
+
+.info-images img {
+    width: 55px;
+    height: 55px;
+}
+                            /* FOOTER */
 }

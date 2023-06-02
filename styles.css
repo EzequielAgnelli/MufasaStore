@@ -365,7 +365,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; IDK IDK */
+    /* flex-wrap: wrap; IDK */
     gap: 20px;
     max-width: 1600px;
 }
@@ -653,7 +653,7 @@ header img {
 }
                             /* CATALOGUE */
 #catalogue {
-    width 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -695,7 +695,9 @@ header img {
 #most-sold {
     justify-content: center;
     align-items: center;
-    max-width: 97%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0px;
 }
 
 .most-sold-container {
@@ -746,4 +748,26 @@ header img {
     height: 55px;
 }
                             /* FOOTER */
+#footer {
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials {
+    margin-top: 15px;
+}
+}
+                                                                            /* TELEFONOS */
+@media (max-width: 576px) {
+                            /* PORTADA */
+    #portada {
+        width: 100%;
+        background-size: cover;
+    }
 }

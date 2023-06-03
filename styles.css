@@ -48,7 +48,7 @@ header img {
 .navbar,
 .navbar-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 20px;
     font-size: 19px;
@@ -200,6 +200,7 @@ header img {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    width: 100%;
 }
 
 #new-products h3 {
@@ -285,6 +286,7 @@ header img {
     text-align: center;
     padding: 20px 30px;
     height: 50%;
+    width: 100%;
 }
 
 .catalogue-container {
@@ -765,9 +767,58 @@ header img {
 }
                                                                             /* TELEFONOS */
 @media (max-width: 576px) {
+                            /* NAVBAR */
+    header {
+        width: 100vw;
+    }
                             /* PORTADA */
     #portada {
         width: 100%;
-        background-size: cover;
     }
+
+    .portada-info p {
+        width: 70%;
+        max-width: 500px;
+    }
+
+    .info-a {
+        width: 45%;
+    }
+
+                            /* CATALOGUE */
+    #catalogue {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+
+.catalogue-container {
+    flex-direction: column;
+    /* background-color: transparent; */
+}
+
+.catalogue-info h2 {
+    width: 90%;
+    font-size: 28px;
+}
+
+.catalogue-info p {
+    width: 70%;
+    font-size: 18px;
+}
+
+.catalogue-info a {
+    text-align: center;
+    width: 45%;
+}
+
+.catalogue-image {
+    align-items: center;
+}
+
+.catalogue-image img {
+    width: 240px;
+    height: 240px;
+}
 }

@@ -10,4 +10,4 @@ Decidi hacer este README para anotar las pequeñas cosas que quiero cambiar a fu
 5. Decidi no agregar tantas animaciones para no saturar la pagina, ya que tengo como idea de que sea una pagina "minimalista" sin tantas cosas, en donde la persona que quiera comprar, lo haga de una manera facil y rapida.
   
   
-  Espero que a la persona que vea esto le guste la pagina! OBVIAMENTE no garantizo que sea perfecta, pero di lo mejor de mi para hacer la mejor landing page posible sin errores. Seguro me este olvidando de varios puntos asi que los voy a agregar a futuro! 
+  Espero que a la persona que vea esto le guste la pagina! OBVIAMENTE no garantizo que sea perfecta, pero di lo mejor de mi para hacer la mejor landing page posible sin errores :)

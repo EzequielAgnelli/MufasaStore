@@ -59,6 +59,11 @@ body {
     opacity: 1;
     animation: fade 1s 0s ease-in-out forwards, slideUp 1s ease-out;
 }
+
+.info-bottom {
+    opacity: 1;
+    animation: fade 1s 0s ease-in-out forwards, slideUp 1s ease-out;
+}
                                                                     /* HEADER Y NAVBAR */
 header {
     display: flex;
@@ -262,7 +267,13 @@ header img {
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
+    transition: all .6s ease;
 }
+
+.btn-cart button:hover {
+    box-shadow: 0 0 20px crimson;
+}
+
                                                                     /* MAIN */
                                                                             /* PORTADA */
 #portada {
@@ -317,6 +328,11 @@ header img {
     width: 30%;
     text-transform: uppercase;
     text-align: center;
+    transition: all 0.5s;
+}
+
+.info-a:hover {
+    box-shadow: 0 0 20px crimson;
 }
 
 .portada-info-bot {
@@ -467,6 +483,11 @@ header img {
     border: none;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: .5s;
+}
+
+.product-info-bot button:hover {
+    box-shadow: 0 0 20px crimson;
 }
 
                                                                     /* CATALOGUE SECTION - SECCION DE CATALOGO */
@@ -619,6 +640,11 @@ header img {
     border: none;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: .5s;
+}
+
+.info-product_top button:hover {
+    box-shadow: 0 0 20px crimson;
 }
 
                                                                     /* INFO/HELP SECCION */
@@ -715,17 +741,25 @@ header img {
 
 .container-links li {
     font-size: 17px;
-                                /* SEGUIR EDITANDO LUEGO */
+    transition: all 0.5s ease;
+}
+
+.container-links li:hover {
+    transform: translateX(10px);
 }
 
 .container-links .compra {
     text-transform: uppercase;
     outline: 1px solid white;
-    background-color: rgba(245, 245, 245, 0.055);
     padding: 7px;
     border-radius: 9px;
     text-align: center;
     font-weight: 600;
+    transition: .5s;
+}
+
+.container-links .compra:hover {
+    background-color: rgba(245, 245, 245, 0.11);
 }
 
 .socials {

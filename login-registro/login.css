@@ -170,6 +170,13 @@ input[type='checkbox'] {
     text-align: center;
     cursor: pointer;
     margin-top: 20px;
+    transition: 0.5s;
+}
+
+.btn-login:hover {
+    background-color: black;
+    color: white;
+    font: 800;
 }
 
 .register {
@@ -179,6 +186,12 @@ input[type='checkbox'] {
 
 .register a {
     color: rgb(220, 20, 60);
+    font-weight: 800;
+    transition: .5s;
+}
+
+.register a:hover {
+    color: black;
     font-weight: 800;
 }
 

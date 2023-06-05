@@ -159,6 +159,13 @@ form input[type="text"], form input[type="number"],form input[type="password"] {
     text-align: center;
     cursor: pointer;
     margin-top: 20px;
+    transition: .5s;
+}
+
+.btn-signup:hover {
+    background-color: black;
+    color: white;
+    font-weight: 800;
 }
 
 /* ESTO SIRVE PARA SACARLE LAS FLECHAS DEL COSTADO AL INPUT NUMBER */

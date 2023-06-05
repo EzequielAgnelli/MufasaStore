@@ -1084,12 +1084,14 @@ header img {
 @media (max-width: 1280px) {
     .most-sold-container {
         flex-wrap: wrap;
+        align-items: center;
     }
 }
                                                                             /* MONITORES 1366X768 */
 @media (max-width: 1366px) {
     .most-sold-container {
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .product-sold img {

@@ -87,7 +87,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(204, 204, 204);
+    background-image: url('/forms-imgs/3.jpeg');
+    background-clip: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
 }
 
@@ -112,21 +115,23 @@ main {
 
 .formulario-top h4 {
     padding: 9px;
-    font-size: 18px;
-    font-weight: 800;
-    color: black;
 }
 
 .formulario-top input {
     padding: 10px;
     width: 250px;
-    border: 1px solid gray;
-    border-radius: 7px;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-radius: 1px;
 }
 
 ::placeholder { 
     color: black; 
-    font-weight: 700;
+}
+
+form input[type="text"] {
+    background-color: transparent;
+    color: black;
 }
 
 .formulario-bottom {
@@ -135,6 +140,17 @@ main {
 
 .formulario-bottom label {
     margin-top: 7px;
+    cursor: pointer;
+}
+
+.checkbox {
+    margin-top: 7px;
+}
+
+/* ESTO SIRVE PARA CAMBIARLE EL COLOR AL CHECKED DEL INPUT CHECKBOX */
+input[type='checkbox'] {
+    accent-color: crimson;
+    cursor: pointer;
 }
 
 .formulario-bottom input {
@@ -142,7 +158,7 @@ main {
     
 }
 
-#formulario button {
+.btn-login {
     width: 40%;
     color: white;
     background-color: crimson;
@@ -172,14 +188,7 @@ main {
     .header {
         gap: 15px;
     }
-
-    .cart-img {
-        width: 65px;
-        height: 65px;
-        margin-right: 5rem;
-        margin-top: 4px;
-    }
-
+    
     .navbar-links {
         position: absolute;
         top: 75px;
@@ -204,9 +213,42 @@ main {
     display: flex;
     order: 2;
     cursor: pointer;
+    margin-right: 10rem;
 }
 
 #menu-toggle:checked + .navbar-links {
     display: flex;
 }
+
+                            /* ESTILOS GENERALES DE LA CARD */
+.formulario-inicio h1 {
+    font-size: 35px;
+}
+
+.formulario-top h4 {
+    font-size: 22px;
+}
+
+.formulario-bottom label {
+    font-size: 18px;
+}
+
+.btn-login {
+    width: 43%;
+}
+
+.register {
+    font-size: 19px;
+}
+
+}
+
+@media (max-width: 576px) {
+    .register {
+        font-size: 16px;
+    }
+
+    #formulario {
+        width: 340px;
+    }
 }

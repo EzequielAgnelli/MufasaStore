@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar / Mufasa</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bitter:wght@200&family=Indie+Flower&family=Lato:wght@300&family=Lora&family=Manrope:wght@200&family=Mulish:wght@200&family=Nunito:wght@200;300&family=Open+Sans&family=PT+Sans&family=Poppins&family=Roboto:ital,wght@1,300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="/Navbar/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -23,31 +23,33 @@
                 <li><a href="/index.html">Volver al Inicio</a></li>
                 <li><a href="./log-in.html">Iniciar sesión</a></li>
                 <li><a href="./registro.html">Registrarse</a></li>
-                <li><a href="/index.html/#new-products">Nuevos Ingresos</a></li>
+                <li><a href="/index.html">Nuevos Ingresos</a></li>
             </ul>
         </nav>
         </header>
                                                                     <!-- HEADER Y NAVBAR -->
         <main>
+            <form>
             <section id="formulario">
                 <div class="formulario-inicio">
                     <h1>Iniciar Sesion</h1>
                 </div>
                 <div class="formulario-top">
-                    <h4>Correo Electronico</h4>
-                    <input type="text" class="input" placeholder="Tu Correo Electronico" required>
-                    <h4>Contraseña</h4>
-                    <input type="password" class="input" placeholder="Tu Contraseña" required>
+                    <h4></h4>
+                    <input type="text" class="input" placeholder="Tu Email" required>
+                    <h4></h4>
+                    <input type="password" class="input" placeholder="Contraseña" required>
                 </div>
                 <div class="formulario-bottom">
                     <label for="checkbox">Recordar Contraseña</label>
-                    <input type="checkbox" id="checkbox">
+                    <input type="checkbox" id="checkbox" class="checkbox">
                 </div>
-                <button>Iniciar Sesion</button>
+                <input type="submit" value="Iniciar Sesion" class="btn-login">
                 <div class="register">
-                    <p>Aun no tienes una cuenta? <a href="#">Registrate Aqui</a></p>
+                    <p>Aun no tienes una cuenta? <a href="/login-registro/registro.html">Registrate Aqui</a></p>
                 </div>
             </section>
+        </form>
         </main>
 </body>
 </html>

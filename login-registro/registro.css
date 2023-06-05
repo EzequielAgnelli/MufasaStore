@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Assistant';
+}
+
+                                                                     /* HEADER Y NAVBAR */ 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+header img {
+    width: 175px;
+    height: 175px;
+}
+
+.menu-label img {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.navbar,
+.navbar-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    font-size: 19px;
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    font-weight: 700;
+}
+
+.navbar-links {
+    position: relative;
+    position: 0;
+}
+
+.navbar-links li {
+    position: relative;
+    padding: 0;
+}
+
+.navbar-links li::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 1s ease;
+}
+
+.navbar-links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#menu-toggle,
+.menu-label {
+    display: none;
+}
+
+                                                                     /* MAIN */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/forms-imgs/2.jpeg');
+    background-clip: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #fff;
+    outline: 1px solid black;
+    width: 420px;
+    height: 500px;
+
+}
+
+#formulario p {
+    text-align: center;
+    padding: 7px;
+    margin-top: 5px;
+    font-weight: 800;
+}
+
+.formulario-inicio h1 {
+    font-size: 28.5px;
+    font-weight: 800;
+}
+
+.formulario-top h4 {
+    padding: 9px;
+}
+
+.formulario-top input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-radius: 1px;
+}
+
+::placeholder {
+    color: black;
+}
+
+form input[type="text"], form input[type="number"],form input[type="password"] {
+    background-color: transparent;
+    color: black;
+}
+
+.formulario-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-signup {
+    width: 35%;
+    color: white;
+    background-color: crimson;
+    border-radius: 6.5px;
+    font-weight: 800;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* ESTO SIRVE PARA SACARLE LAS FLECHAS DEL COSTADO AL INPUT NUMBER */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+                                                                     /* RESPONSIVE */
+@media (max-width: 992px) {
+    .header {
+        gap: 15px;
+    }
+
+    .navbar-links {
+        position: absolute;
+        top: 65px;
+        right: 5%;
+        left: 5%;
+        width: 90%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid crimson;
+        border-top: none;
+        border-radius: 0px 0px 15px 15px;
+        padding: 25px 15px;
+        gap: 15px;
+        z-index: 2;
+        display: none;
+    }
+
+    .menu-label {
+        display: flex;
+        cursor: pointer;
+        order: 2;
+        margin-right: 10rem;
+    }
+
+    #menu-toggle:checked + .navbar-links {
+        display: flex;
+    }
+
+                            /* ESTILOS AL FORMULARIO */
+.formulario-inicio h1 {
+    font-size: 35px;
+}
+
+::placeholder {
+    font-size: 15.6px;
+}
+
+.btn-signup {
+    width: 43%;
+}
+}
+
+@media (max-width: 576px) {
+    #formulario {
+        width: 350px;
+    }
+}

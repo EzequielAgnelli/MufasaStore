@@ -306,6 +306,8 @@ header img {
     margin-bottom: 40px;
 }
 
+                /* EFECTO AL BOTON CON ETIQUETA SPAN */
+
 .info-a {
     color: white;
     font-weight: 800;
@@ -439,17 +441,33 @@ header img {
 .product-info-bot {
     display: flex;
     justify-content: flex-start;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
+    width: 100%;
 }
+
 
 .product-info-bot p {
     color: #ed6800;
     font-size: 18px;
     font-weight: 800;
     text-transform: uppercase;
+    margin-bottom: 8px;
 }
-
+/* EN UN FUTURO, ESTO LO VOY A SACAR. */
+.product-info-bot button {
+    color: white;
+    font-weight: 800;
+    background-color: crimson;
+    border-radius: 7px;
+    padding: 8px;
+    width: 50%;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
 
                                                                     /* CATALOGUE SECTION - SECCION DE CATALOGO */
 #catalogue {
@@ -566,6 +584,7 @@ header img {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 5px;
+
 }
 
 .info-product_top p {
@@ -585,6 +604,21 @@ header img {
     font-size: 22px;
     color: black;
     margin-bottom: 3px;
+}
+
+/* EN UN FUTURO, ESTO LO VOY A SACAR. */
+.info-product_top button {
+    color: white;
+    font-weight: 800;
+    background-color: crimson;
+    border-radius: 7px;
+    padding: 8px;
+    width: 70%;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
 
                                                                     /* INFO/HELP SECCION */

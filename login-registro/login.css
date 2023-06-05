@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Assistant';
+}
+                                                                    /* HEADER Y NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+header img {
+    width: 175px;
+    height: 175px;
+}
+
+.menu-label img {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.navbar,
+.navbar-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    font-size: 19px;
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    font-weight: 700;
+}
+
+.navbar-links {
+    position: relative;
+    position: 0;
+}
+
+.navbar-links li {
+    position: relative;
+    padding: 0;
+}
+
+.navbar-links li::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 1s ease;
+}
+
+.navbar-links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#menu-toggle,
+.menu-label {
+    display: none;
+}
+
+                                                                    /* MAIN */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 204, 204);
+    height: 100vh;
+}
+
+#formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #fff;
+    outline: 1px solid black;
+    width: 420px;
+    height: 450px;
+
+}
+
+.formulario-inicio h1 {
+    margin-bottom: 20px;
+    font-size: 28.5px;
+    font-weight: 800;
+}
+
+.formulario-top h4 {
+    padding: 9px;
+    font-size: 18px;
+    font-weight: 800;
+    color: black;
+}
+
+.formulario-top input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+::placeholder { 
+    color: black; 
+    font-weight: 700;
+}
+
+.formulario-bottom {
+    display: flex;
+}
+
+.formulario-bottom label {
+    margin-top: 7px;
+}
+
+.formulario-bottom input {
+    margin-left: 10px;
+    
+}
+
+#formulario button {
+    width: 40%;
+    color: white;
+    background-color: crimson;
+    border-radius: 6.5px;
+    font-weight: 800;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register {
+    margin-top: 15px;
+    font-size: 16.7px;
+}
+
+.register a {
+    color: rgb(220, 20, 60);
+    font-weight: 800;
+}
+
+                                                                    /* RESPONSIVE */
+@media (max-width: 992px) {
+                            /* NAVBAR */
+    .header {
+        gap: 15px;
+    }
+
+    .cart-img {
+        width: 65px;
+        height: 65px;
+        margin-right: 5rem;
+        margin-top: 4px;
+    }
+
+    .navbar-links {
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        left: 5%;
+        width: 90%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        border-radius: 0px 0px 15px 15px;
+        border: 1px solid crimson;
+        border-top: none;
+        padding: 25px 15px;
+        gap: 15px;
+        z-index: 2;
+        display: none;
+    }
+
+                            /* MENU */
+.menu-label {
+    display: flex;
+    order: 2;
+    cursor: pointer;
+}
+
+#menu-toggle:checked + .navbar-links {
+    display: flex;
+}
+}

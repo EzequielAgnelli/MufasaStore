@@ -11,5 +11,3 @@ Decidi hacer este README para anotar las pequeñas cosas que quiero cambiar a fu
   
   
   Espero que a la persona que vea esto le guste la pagina! OBVIAMENTE no garantizo que sea perfecta, pero di lo mejor de mi para hacer la mejor landing page posible sin errores :)
-
-Actualizacion del 16/06: Un nuevo commit para agregarle estilo a la scrollbar del body, un producto mas al carrito y pequeñas correciones generales.

@@ -10,6 +10,17 @@ body {
     font-family: 'Assistant';
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: crimson;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
                                                                      /* HEADER Y NAVBAR */ 
 header {
     display: flex;
@@ -128,7 +139,6 @@ main {
     width: 250px;
     border: none;
     border-bottom: 1px solid gray;
-    border-radius: 1px;
 }
 
 ::placeholder {
@@ -168,11 +178,81 @@ form input[type="text"], form input[type="number"],form input[type="password"] {
     font-weight: 800;
 }
 
-/* ESTO SIRVE PARA SACARLE LAS FLECHAS DEL COSTADO AL INPUT NUMBER */
+                            /* ESTO SIRVE PARA SACARLE LAS FLECHAS DEL COSTADO AL INPUT NUMBER */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+                                                                    /* FOOTER */
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    gap: 50px;
+    max-width: 1200px;
+}
+
+.container-links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-links h2 {
+    font-size: 24px;
+}
+
+.container-links a {
+    color: white;
+}
+
+.container-links li {
+    font-size: 17px;
+    transition: all 0.5s ease;
+}
+
+.container-links li:hover {
+    transform: translateX(10px);
+}
+
+.container-links .compra {
+    text-transform: uppercase;
+    outline: 1px solid white;
+    padding: 7px;
+    border-radius: 9px;
+    text-align: center;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.container-links .compra:hover {
+    background-color: rgba(245, 245, 245, 0.11);
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.socials img {
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    
 }
 
                                                                      /* RESPONSIVE */
@@ -205,12 +285,29 @@ input::-webkit-inner-spin-button {
         display: flex;
         cursor: pointer;
         order: 2;
-        margin-right: 10rem;
+        width: 36vh;
+        /* margin-right: 10rem; */
     }
 
     #menu-toggle:checked + .navbar-links {
         display: flex;
     }
+
+                            /* FOOTER */
+#footer {
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials {
+    margin-top: 15px;
+}
 
                             /* ESTILOS AL FORMULARIO */
 .formulario-inicio h1 {

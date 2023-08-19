@@ -4,92 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce</title>
+    <title>E-commerce</title>
+
+                                        <!-- COSAS EXTRAS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bitter:wght@200&family=Indie+Flower&family=Lato:wght@300&family=Lora&family=Manrope:wght@200&family=Mulish:wght@200&family=Nunito:wght@200;300&family=Open+Sans&family=PT+Sans&family=Poppins&family=Roboto:ital,wght@1,300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+                                        <!-- FAVICON -->
 <link rel="shortcut icon" href="./Navbar/favicon-32x32.png" type="image/x-icon">
+
+                                        <!-- ARCHIVO DE CSS -->
     <link rel="stylesheet" href="styles.css">
+
+                                        <!-- ACA EMPIEZA EL CODIGO. NAVBAR Y CART.-->
 </head>
 <body>
     <header>
         <img src="./Navbar/Logo 2.png" alt="Logo">
         <nav class="navbar">
 
-            <label  for="menu-toggle" class="menu-label">
-                <img src="./Navbar/Menu Icon.png" alt="Icono del Menu">
-            </label>
-            <input type="checkbox" id="menu-toggle">
+        <div class="menu-label">
+            <img src="./Navbar/Menu Icon.png" alt="Icono abrir Menu">
+        </div>
+            <!-- <input type="checkbox" id="menu-toggle"> -->
 
             <ul class="navbar-links">
                 <li><a href="#portada">Inicio</a></li>
                 <li><a href="#new-products">Nuevos Ingresos</a></li>
                 <li><a href="#most-sold">Mas Vendidos</a></li>
-                <li><a href="forms-login-register/log-in.html">Iniciar sesion</a></li>
-                <li><a href="forms-login-register/registro.html">Registrarse</a></li>
+                <li><a href="#products-by-filter">Marcas</a></li>
+                <li><a href="Login-Register-pages/log-in.html">Iniciar sesion</a></li>
+                <li><a href="Login-Register-pages/registro.html">Registrarse</a></li>
             </ul>
-        </nav>
+
         
-        
-        <label for="cart-toggle" class="cart-label">
-            <img src="./Navbar/carritocompra.png" alt="Shopping Cart" class="cart-img">
-        </label>
-        <input type="checkbox" id="cart-toggle">
+                                                                    <!-- CARRITO DE COMPRAS. -->
+    <div class="cart-label">
+
+        <i class="fa-solid fa-cart-shopping cart-icon">
+        <div class="cart-bubble">0</div>
+        </i>
+    </div>
+
         <div class="cart">
             <h2>Tus Productos</h2>
-            <div class="cart-item">
-                <img src="./Products/Forum Mid.png" alt="Forum Mid">
-                <div class="item-info">
-                    <h3 class="item-name">Adidas Forum Mid</h3>
-                    <p class="item-bid">Productos Actuales:</p>
-                    <span class="item-price">$43.099</span>
-                </div>
-                <div class="item-handler">
-                    <span class="quantity-handler down">-</span>
-                    <span class="item-quantity">1</span>
-                    <span class="quantity-handler up">+</span>
-                </div>
+
+            <div class="cart-container">
+    
             </div>
 
-            <div class="cart-item">
-                <img src="./Products/Air Jordan 1 High.png" alt="Air Jordan 1 High">
-                <div class="item-info">
-                    <h3 class="item-name">Air Jordan 1 High</h3>
-                    <p class="item-bid">Productos Actuales:</p>
-                    <span class="item-price">$99.999</span>
-                </div>
-                <div class="item-handler">
-                    <span class="quantity-handler down">-</span>
-                    <span class="item-quantity">1</span>
-                    <span class="quantity-handler up">+</span>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <img src="./Products/Air Max 97 OG.png" alt="Air Max 97 OG">
-                <div class="item-info">
-                    <h3 class="item-name">Air Max 97 OG</h3>
-                    <p class="item-bid">Productos Actuales:</p>
-                    <span class="item-price">$89.999</span>
-                </div>
-                <div class="item-handler">
-                    <span class="quantity-handler down">-</span>
-                    <span class="item-quantity">1</span>
-                    <span class="quantity-handler up">+</span>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <img src="./Products/Zapatillas Rider FV Fandom.png" alt="Rider FV Fandom">
-                <div class="item-info">
-                    <h3 class="item-name">Rider FV Fandom</h3>
-                    <p class="item-bid">Productos Actuales:</p>
-                    <span class="item-price">$40.499</span>
-                </div>
-                <div class="item-handler">
-                    <span class="quantity-handler down">-</span>
-                    <span class="item-quantity">1</span>
-                    <span class="quantity-handler up">+</span>
-                </div>
-            </div>
             <div class="separador-cart"></div>
             <div class="total-cart">
                 <p>Total:</p>
@@ -99,6 +64,9 @@
                 <button>Terminar Compra</button>
             </div>
         </div>
+
+        <div class="overlay"></div>
+    </nav>
     </header>
 
                                                                     <!-- PORTADA SECTION -->
@@ -114,6 +82,7 @@
                 </div>
             </div>
         </section>
+
                                                                     <!-- BRANDS SECTION -->
         <section id="brands">
             <div class="brands-title">
@@ -129,6 +98,7 @@
             </div>
         </section>
 
+                                                                    <!-- NEW PRODUCTS SECTION -->
         <section id="new-products">
             <h3>Nuevos productos</h3>
             <div class="new-products-container">
@@ -226,6 +196,7 @@
                 </div>
             </div>
         </section>
+
                                                             <!-- MAS VENDIDO SECTION - PENDIENTE: ARMAR UN CARRUSEL CON FLECHA DE SLIDER AL LADO DEL H3 (MAS VENDIDOS) -->
         <section id="most-sold">
             <h3>Mas vendidos</h3>
@@ -236,7 +207,7 @@
                     <p>Forum Bold</p>
                     <span>ADIDAS</span>
                     <h4>$58.999</h4>
-                    <button>Agregar al carrito</button>
+                    <button class="most-sold-btn">Agregar al carrito</button>
                 </div>
             </div>
             
@@ -246,7 +217,7 @@
                 <p>Air Max 97 OG</p>
                 <span>NIKE</span>
                 <h4>$89.999</h4>
-                <button>Agregar al carrito</button>
+                <button class="most-sold-btn">Agregar al carrito</button>
             </div>
         </div>
 
@@ -256,7 +227,7 @@
             <p>Fila Electrowave 2</p>
             <span>FILA</span>
             <h4>$41.750</h4>
-            <button>Agregar al carrito</button>
+            <button class="most-sold-btn">Agregar al carrito</button>
         </div>
     </div>
 
@@ -266,7 +237,7 @@
         <p>Run Star Legacy CX</p>
         <span>Converse</span>
         <h4>$100.000</h4>
-        <button>Agregar al carrito</button>
+        <button class="most-sold-btn">Agregar al carrito</button>
     </div>
     </div>
 
@@ -301,7 +272,26 @@
                 </div>
             </div>
         </section>
-    </main>
+
+                                                                        <!-- PRODUCTS BY FILTER. -->
+        <section id="products-by-filter">
+            <h2>Busca por marcas</h2>
+            <div class="categories">
+                <button class="category active">🌎Todas</button>
+                <button class="category" data-category="Nike">Nike</button>
+                <button class="category" data-category="Adidas">Adidas</button>
+                <button class="category" data-category="Puma">Puma</button>
+                <button class="category" data-category="Converse">Converse</button>
+                <button class="category" data-category="Fila">Fila</button>
+            </div>
+
+                                                <!-- CONTAINER DE PRODUCTOS RENDERIZADO EN JS CON FILTRO DE MARCAS INLCUIDO. -->
+            <div class="products-filter-container">
+
+        </div>
+        <button class="btn-moreproducts">Ver mas</button>
+        </section>
+
                                                                         <!-- FOOTER -->
     <footer id="footer">
         <div class="container">
@@ -341,5 +331,10 @@
         <a href="https://www.youtube.com/" target="_blank"><img src="./Footer-imgs/Youtube 2.png" alt="Youtube Logo"></a>
 </div>
     </footer>
+
+                                        <!-- ARCHIVOS JAVASCRIPT. -->
+    <script src="dataProducts.js"></script>
+    <script src="script.js"></script>
 </body>
+</main>
 </html>

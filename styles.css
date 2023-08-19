@@ -75,6 +75,35 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
     animation: fade 1s 0s ease-in-out forwards, slideUp 1s ease-out;
 }
+
+                                        /* JAVASCRIPT  */
+.overlay {
+position: absolute;
+top: 65px;
+left: 0;
+height: 100vh;
+width: 100%;
+z-index: 1; /*Para que quede por encima del resto de las cosas*/
+background: rgba(255, 255, 255, 0.05);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+display: none;
+}
+
+.show-overlay {
+display: block;
+}
+
+.open-cart {
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.open-menu {
+    display: flex;
+}
+
                                                                     /* HEADER Y NAVBAR */
 header {
     display: flex;
@@ -82,7 +111,9 @@ header {
     align-items: center;
     height: 75px;
     width: 100%;
-    background-color: rgb(56, 56, 56);
+    background: #232526;  /* Para navegadores viejos */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
     position: fixed;
     top: 0;
     z-index: 2;
@@ -97,13 +128,6 @@ header img {
     width: 65px;
     height: 65px;
     cursor: pointer;
-}
-
-.cart-img {
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-    margin-right: 30px;
 }
 
 .navbar,
@@ -169,14 +193,14 @@ header img {
     z-index: 2;
     border-left: 1px solid crimson;
     background-color: #fff;
-    transform: translate(200%);
-    transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+        transform: translate(200%);
+        transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
 #cart-toggle:checked + .cart {
     /* display: flex; */
     transform: translate(0);
-    transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99); 
 }
 
 .cart::-webkit-scrollbar {
@@ -714,6 +738,116 @@ header img {
     color: black;
 }
 
+                                                                    /* CATALOGO FILTRADO, RENDERIZADO DESDE JS. */
+#products-by-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+#products-by-filter h2 {
+    font-size: 27px;
+    color: black;
+    padding: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.categories {
+    margin-bottom: 10px;
+}
+.products-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.product-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    outline: 1px solid gray;
+}
+
+.product-filter img {
+    width: 340px;
+    height: 360px;
+}
+
+.info-filter-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-filter-top p {
+    font-weight: 800;
+    font-size: 19.5px;
+    color: black;
+}
+
+.info-filter-top span {
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.info-filter-top h4 {
+    font-weight: 800;
+    font-size: 22px;
+    color: black;
+}
+
+.btn-add {
+    color: white;
+    font-weight: 800;
+    background-color: crimson;
+    border-radius: 7px;
+    padding: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn-add:hover {
+    box-shadow: 0 0 20px crimson;
+}
+
+.btn-moreproducts {
+    color: white;
+    font-weight: 800;
+    background-color: crimson;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 140px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 8px;
+}
+
+/* Esto sera el hidden del boton de "Ver Mas". Clase para JS. */
+.hidden { 
+    display: none;
+}
                                                                     /* FOOTER */
 #footer {
     display: flex;

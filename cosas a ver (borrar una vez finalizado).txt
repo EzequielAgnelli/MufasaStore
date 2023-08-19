@@ -1,0 +1,11 @@
+Mejorar el color de la section: Nuestras Marcas.
+Mejorar el color de la section: catalogo.
+Mejorar el color de la section: Info/Help.
+Ver el color de las letras en la portada.
+Hacer un footer mas atractivo.
+-----------------------------------------------------
+Cambiar el color de la Navbar en Iniciar Sesion y Registrarse.
+en Registrarse, cambiar el parrafo abajo del boton y agregar un hover a las letras azules.
+
+
+Agregar una etiqueta a en el logo de las navbar para volver al inicio. Especialmente en Iniciar Sesion y Registrarse.

@@ -1,11 +1,20 @@
 Mejorar el color de la section: Nuestras Marcas.
 Mejorar el color de la section: catalogo.
 Mejorar el color de la section: Info/Help.
-Ver el color de las letras en la portada.
+Mejorar el color de las letras en la portada.
+Mejorar el favicon de la pagina.
+Pensar en un nombre para el title del HTML - Posiblemente: (Mufasa Store)
 Hacer un footer mas atractivo.
+Remover el nombre de las marcas en el titulo de las Zapatillas.
+----------------------------------------------------
+Agregar Hover al boton de "Ver Mas"
 -----------------------------------------------------
 Cambiar el color de la Navbar en Iniciar Sesion y Registrarse.
 en Registrarse, cambiar el parrafo abajo del boton y agregar un hover a las letras azules.
-
+-----------------------------------------------------------------------------------------------
+Agregar mas comentarios en JS.
+Agregar mas productos en dataProducts
+Cambiar de nombre el archivo dataProducts
+-----------------------------------------------------------------------------------------------
 
 Agregar una etiqueta a en el logo de las navbar para volver al inicio. Especialmente en Iniciar Sesion y Registrarse.

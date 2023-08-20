@@ -32,7 +32,7 @@ const productsData = [
     precio: 50000,
     category: "Nike",
     marca: "Nike",
-    cardImg: './Products/Nike-Dunk-Low-JS.png',
+    cardImg: './Products/Nike-Dunk-Low-JS.png'
     },
 
     {
@@ -41,7 +41,7 @@ const productsData = [
     precio: 40000,
     category: "Adidas",
     marca: "Adidas",
-    cardImg: './Products/Yeezy-Boost-350-V2-JS.png',
+    cardImg: './Products/Yeezy-Boost-350-V2-JS.png'
     },
 
     {
@@ -50,7 +50,7 @@ const productsData = [
     precio: 30000,
     category: "Adidas",
     marca: "Adidas",
-    cardImg: './Products/Ultraboost-Light-JS.png',
+    cardImg: './Products/Ultraboost-Light-JS.png'
     },
 
     {
@@ -59,7 +59,7 @@ const productsData = [
     precio: 80000,
     category: "Adidas",
     marca: "Adidas",
-    cardImg: './Products/Stan-Smith-x-Andre-Saraiva2-Adidas-JS.png',
+    cardImg: './Products/Stan-Smith-x-Andre-Saraiva2-Adidas-JS.png'
     },
 
     {
@@ -78,8 +78,46 @@ const productsData = [
         category: "Converse",
         marca: "Converse",
         cardImg: './Products/Fastbreak-Pro-Mid.png'
+    },
+
+    {
+        id: 10,
+        nombre: "Cuck Taylor All Star",
+        precio: 90000,
+        category: "Converse",
+        marca: "Converse",
+        cardImg: './Products/Cuck-Taylor-All-Star.png'
+    },
+
+    {
+        id: 11,
+        nombre: "Suede Classic XXI",
+        precio: 45600,
+        category: "Puma",
+        marca: "Puma",
+        cardImg: './Products/Suede-Classic-XXI.png'
+    },
+
+    {
+        id: 12,
+        nombre: "Slip Stream",
+        precio: 50000,
+        category: "Puma",
+        marca: "Puma",
+        cardImg: './Products/SlipStream.png'
+    },
+
+    {
+        id: 13,
+        nombre: "Court Rider Chaos",
+        precio: 75400,
+        category: "Puma",
+        marca: "Puma",
+        cardImg: './Products/basketball-Court-Rider-Chaos.png'
     }
 ];
+
+
 
 // Función para dividir los productos en arrays.
 const divideProducts = (size) => {

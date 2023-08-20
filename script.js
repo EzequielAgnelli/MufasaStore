@@ -3,6 +3,8 @@ const productsContainer = document.querySelector(".products-filter-container") /
 const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
 
 // DOM encargado de llamar al Carrito y al Menu.
+const cartBtn = document.querySelector(".cart-label")
+const cartMenu = document.querySelector(".cart")
 
 // Funcion para renderizar la lista de productos.
 const createProductTemplate = (product) => {
@@ -28,7 +30,7 @@ data-img='${cardImg}'>Agregar al carrito</button>
 const moreProducts = () => {
     appState.currentProducts +=1;
     let {products, currentProducts} = appState
-    renderProducts(products[currentProducts]);
+    renderProducts(products[currentProducts]); // Products y currentProducts vienen del JS de dataProducts (appState)
     if(lastProducts()) {
         btnLoad.classList.add("hidden")
     }
@@ -36,7 +38,7 @@ const moreProducts = () => {
 
 // Funcion para ver si el indice de productos renderizados es igual al del limite de estos mismos productos.
 const lastProducts = () => {
-    return appState.currentProducts === appState.limiteProducts -1;
+    return appState.currentProducts === appState.limiteProducts -1; // limiteProducts viene de dataProducts (appState)
 };
 
 // Funcion para renderizar la lista de productos.
@@ -46,10 +48,16 @@ const renderProducts = (productsList) => {
     .join('');
 };
 
+
+const toggleCart = () => {
+    cartMenu.classList.toggle("open-cart")
+}
+
 // Funcion inicializadora para llamar a los Listeners y el init.
 const init = () => {
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) //
+    cartBtn.addEventListener("click", toggleCart)
 };
 
 init()

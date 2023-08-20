@@ -76,34 +76,6 @@ body::-webkit-scrollbar-thumb {
     animation: fade 1s 0s ease-in-out forwards, slideUp 1s ease-out;
 }
 
-                                        /* JAVASCRIPT  */
-.overlay {
-position: absolute;
-top: 65px;
-left: 0;
-height: 100vh;
-width: 100%;
-z-index: 1; /*Para que quede por encima del resto de las cosas*/
-background: rgba(255, 255, 255, 0.05);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-display: none;
-}
-
-.show-overlay {
-display: block;
-}
-
-.open-cart {
-    transform: translate(0%);
-    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
-}
-
-.open-menu {
-    display: flex;
-}
-
                                                                     /* HEADER Y NAVBAR */
 header {
     display: flex;
@@ -308,6 +280,37 @@ header img {
 .btn-cart button:hover {
     box-shadow: 0 0 20px crimson;
 }
+
+                                        /* JAVASCRIPT  */
+.overlay {
+position: absolute;
+top: 65px;
+left: 0;
+height: 100vh;
+width: 100%;
+z-index: 1; /*Para que quede por encima del resto de las cosas*/
+background: rgba(255, 255, 255, 0.05);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+display: none;
+}
+
+.show-overlay {
+display: block;
+}
+
+/* Toggle del carrito de compras */
+.open-cart {
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.open-menu {
+    display: flex;
+}
+
+
 
                                                                     /* MAIN */
                                                                             /* PORTADA */

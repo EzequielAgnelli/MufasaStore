@@ -4,7 +4,10 @@ const btnLoad = document.querySelector(".btn-moreproducts") // Boton para render
 
 // DOM encargado de llamar al Carrito y al Menu.
 const cartBtn = document.querySelector(".cart-label")
+const menuBtn = document.querySelector(".menu-label")
 const cartMenu = document.querySelector(".cart")
+const barsMenu = document.querySelector(".navbar-links")
+const overlay = document.querySelector(".overlay")
 
 // Funcion para renderizar la lista de productos.
 const createProductTemplate = (product) => {
@@ -48,16 +51,34 @@ const renderProducts = (productsList) => {
     .join('');
 };
 
-
+// Activar el cart y si el menu esta abierto que se cierre el carrito.
 const toggleCart = () => {
     cartMenu.classList.toggle("open-cart")
-}
+    // Menu Hamburguesa 🍔. Si esta abierto, que se cierre para evitar que se sobreponga con el menu. Tambien activo el overlay con 0px de blur (Se sigue notando un brillo minimo)
+    if(barsMenu.classList.contains("open-menu")) {
+        barsMenu.classList.remove("open-menu");
+        return; 
+    }
+    overlay.classList.toggle("show-overlay")
+};
+
+// Activar el menu hamburguesa y que se cierre el cart si este mismo se abre.
+const toggleMenu = () => {
+    barsMenu.classList.toggle("open-menu")
+    if(cartMenu.classList.contains("open-cart")) {
+        cartMenu.classList.remove("open-cart");
+        return
+    }
+    overlay.classList.toggle("show-overlay")
+};
 
 // Funcion inicializadora para llamar a los Listeners y el init.
 const init = () => {
     renderProducts(appState.products[0]);
-    btnLoad.addEventListener("click", moreProducts) //
-    cartBtn.addEventListener("click", toggleCart)
+    btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
+    cartBtn.addEventListener("click", toggleCart) // Para togglear el Carrito.
+    menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
+
 };
 
 init()

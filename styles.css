@@ -163,8 +163,8 @@ header img {
     z-index: 2;
     border-left: 1px solid crimson;
     background-color: #fff;
-        transform: translate(200%);
-        transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    transform: translate(200%);
+    transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
 #cart-toggle:checked + .cart {
@@ -184,6 +184,10 @@ header img {
     align-items: center;
     gap: 15px;
     outline: 1px solid black;
+}
+
+.empty-cart-text {
+    color: black;
 }
 
 .item-info {
@@ -252,7 +256,7 @@ header img {
     font-size: 18px;
 }
 
-.total-cart span {
+.total {
     font-size: 19.5px;
 }
 
@@ -851,6 +855,116 @@ display: block;
 .hidden { 
     display: none;
 }
+
+                                                                    /* CONTACT US */
+#contactus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+#contactus h2 {
+    font-size: 27px;
+    color: black;
+    margin-top: 10px;
+    padding: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contactus-form {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border-radius: 12px;
+background-color: #fff;
+outline: 1px solid crimson;
+width: 400px;
+height: 490px;
+}   
+
+.contactus-top h4 {
+    padding: 10px;
+}
+
+.contactus-top input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+form input[type="text"], form input[type="email"] {
+    background-color: transparent;
+    color: black;
+    font-family: 'Assistant';
+    font-weight: 800;
+}
+
+::placeholder {
+    color: black;
+}
+.contactus-top textarea {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid black;
+    /* El resize none es para que no se pueda agrandar el text area. */
+    resize: none;
+    font-family: 'Assistant';
+    font-weight: 800;
+}
+
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+background-color: rgb(50, 50, 250);
+}
+
+.contactus-btn {
+    width: 40%;
+    color: white;
+    background-color: crimson;
+    border-radius: 6.5px;
+    font-weight: 800;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: all .6s ease;
+}
+
+.contactus-btn:hover {
+    box-shadow: 0 0 20px crimson;
+}
+
+                                                /* CONTACT US, ESTILOS PARA JS. */
+.contactus-top.success input {
+    border: 2px solid green;
+}
+
+.contactus-top.error input {
+    border: 1px solid red;
+}
+
+.contactus-top small {
+    color: red;
+    max-width: 350px;
+    text-align: center;
+    display: none;
+}
+
+#contactus-error {
+    color: red;
+}
                                                                     /* FOOTER */
 #footer {
     display: flex;
@@ -1191,10 +1305,10 @@ cursor: pointer;
 }
                             /* CATALOGUE */
     #catalogue {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .catalogue-container {

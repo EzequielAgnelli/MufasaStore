@@ -8,6 +8,14 @@ const menuBtn = document.querySelector(".menu-label")
 const cartMenu = document.querySelector(".cart")
 const barsMenu = document.querySelector(".navbar-links")
 const overlay = document.querySelector(".overlay")
+const productsCart = document.querySelector(".cart-container")
+
+// DOM encargado de llamar a la seccion Contact Us
+const form = document.getElementById("contact-form")
+const inputName = document.getElementById("name")
+const inputLastName = document.getElementById("lastname")
+const inputEmail = document.getElementById("email")
+
 
 // Funcion para renderizar la lista de productos.
 const createProductTemplate = (product) => {
@@ -72,13 +80,84 @@ const toggleMenu = () => {
     overlay.classList.toggle("show-overlay")
 };
 
+// Guardar en el LocalStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+}
+
+// 
+const renderCart = () => {
+    if(!cart.length) {
+        productsCart.innerHTML = `<p class="empty-cart-text">No hay ningun producto agregado.</p>`;
+        return;
+    }
+    productsCart.innerHTML = cart.map(createCartProductTemplate).join('');
+};
+
+const validateForm = () => {
+    
+}
+
+const checkTextInput = (input) => {
+    // Aplicar la validez del value en false.
+    let valid = false;
+    const minCharacters = 4;
+    const maxCharacters = 32;
+
+    if(isEmpty(input)) {
+        showError(input, `Este campo es obligatorio.`);
+        return
+    };
+
+    if(!isBetween(input, minCharacters, maxCharacters)) {
+        showError(
+            input `Este campo debe tener entre ${minCharacters} y ${maxCharacters} caracteres`
+        );
+        return;
+    }
+
+    showSuccess(input);
+    valid = true;
+    return valid;
+}
+
+const isEmpty = (input) => {
+    // falsy.
+    return !input.value.trim().length
+};
+
+const showError = (input, message) => { 
+    const formField = input.parentElement;
+    formField.classList.remove("success");
+    formField.classList.add("error");
+    const error = formField.querySelector("small");
+    error.style.display = "block";
+    error.textContent = message;  
+};
+
+const showSuccess = (input) => {
+    const formField = input.parentElement;
+    formField.classList.remove("error");
+    formField.classList.add("success")
+    const error = formField.querySelector("small")
+    error.textContent = "";
+}
+
+const isBetween = (input, min, max) => {
+    return input.value.length >= min && input.value.length < max
+}
+
 // Funcion inicializadora para llamar a los Listeners y el init.
 const init = () => {
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
     cartBtn.addEventListener("click", toggleCart) // Para togglear el Carrito.
     menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
-
+    form.addEventListener("submit", validateForm) // Listener del formulario de la section de ContactUs.
+    inputName.addEventListener("input", () => checkTextInput (inputName))
+    inputLastName.addEventListener("input", () => checkTextInput (inputLastName)) 
 };
 
 init()

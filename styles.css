@@ -947,15 +947,15 @@ background-color: rgb(50, 50, 250);
 }
 
                                                 /* CONTACT US, ESTILOS PARA JS. */
-.contactus-top.success input {
+.form__field.success input {
     border: 2px solid green;
 }
 
-.contactus-top.error input {
+.form__field.error input {
     border: 1px solid red;
 }
 
-.contactus-top small {
+.form__field small {
     color: red;
     max-width: 350px;
     text-align: center;

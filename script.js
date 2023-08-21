@@ -87,33 +87,30 @@ const saveCart = () => {
     localStorage.setItem("cart", JSON.stringify(cart))
 }
 
-// 
-const renderCart = () => {
-    if(!cart.length) {
-        productsCart.innerHTML = `<p class="empty-cart-text">No hay ningun producto agregado.</p>`;
-        return;
-    }
-    productsCart.innerHTML = cart.map(createCartProductTemplate).join('');
-};
 
-const validateForm = () => {
-    
+// -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
+
+const validateForm = e => {
+    e.preventDefault();
 }
 
+// Validar cantidad de caracteres de un input
 const checkTextInput = (input) => {
     // Aplicar la validez del value en false.
     let valid = false;
     const minCharacters = 4;
-    const maxCharacters = 32;
+    const maxCharacters = 20;
 
+    // Si el campo de LastName o Name estan vacios, este mensaje se va a mostrar.
     if(isEmpty(input)) {
         showError(input, `Este campo es obligatorio.`);
         return
     };
 
+    // Esto va a controlar que el campo de LastName y Name tengan entre 4 y 32 caracteres.
     if(!isBetween(input, minCharacters, maxCharacters)) {
         showError(
-            input `Este campo debe tener entre ${minCharacters} y ${maxCharacters} caracteres`
+            input, `Este campo debe tener entre ${minCharacters} y ${maxCharacters} caracteres`
         );
         return;
     }
@@ -123,20 +120,23 @@ const checkTextInput = (input) => {
     return valid;
 }
 
+// Para setear cuando el input este vacio y se detecte.
 const isEmpty = (input) => {
     // falsy.
     return !input.value.trim().length
 };
 
+// Si no se cumplen los requisitos ingresados del input, se mostrara este showError.
 const showError = (input, message) => { 
     const formField = input.parentElement;
     formField.classList.remove("success");
     formField.classList.add("error");
     const error = formField.querySelector("small");
     error.style.display = "block";
-    error.textContent = message;  
+    error.textContent = message;
 };
 
+// Si se cumplen con los requisitos ingresados del input, se mostrara este showSuccess.
 const showSuccess = (input) => {
     const formField = input.parentElement;
     formField.classList.remove("error");
@@ -149,15 +149,41 @@ const isBetween = (input, min, max) => {
     return input.value.length >= min && input.value.length < max
 }
 
+// Checkear Email.
+const checkEmail = (input) => {
+    let valid = false;
+    if(isEmpty(input)) { 
+        showError(input, `Este campo es obligatorio.`)
+        return;
+    }
+    if(!validEmail(input)) {
+        showError(input, `Este email no es valido.`)
+        return;
+    }
+    showSuccess(input);
+    valid = true;
+    return valid;
+}
+
+
+const validEmail = (input) => {
+    const regularExpression = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
+    return regularExpression.test(input.value)
+};
+
+
 // Funcion inicializadora para llamar a los Listeners y el init.
 const init = () => {
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
     cartBtn.addEventListener("click", toggleCart) // Para togglear el Carrito.
     menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
+
+
+    // ---- LISTENERS DE LA SECCION CONTACT US ---- //
     form.addEventListener("submit", validateForm) // Listener del formulario de la section de ContactUs.
     inputName.addEventListener("input", () => checkTextInput (inputName))
     inputLastName.addEventListener("input", () => checkTextInput (inputLastName)) 
+    inputEmail.addEventListener("input", () => checkEmail(inputEmail))
 };
-
 init()

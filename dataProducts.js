@@ -116,7 +116,7 @@ const productsData = [
         cardImg: './Products/basketball-Court-Rider-Chaos.png'
     }
 ];
-
+// Agregar 2 productos mas.
 
 
 // Función para dividir los productos en arrays.

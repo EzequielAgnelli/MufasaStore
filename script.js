@@ -82,14 +82,6 @@ const toggleMenu = () => {
     overlay.classList.toggle("show-overlay")
 };
 
-// Guardar en el LocalStorage
-let cart = JSON.parse(localStorage.getItem("cart")) || []
-
-const saveCart = () => {
-    localStorage.setItem("cart", JSON.stringify(cart))
-}
-
-
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
 
 // Validar cantidad de caracteres de un input
@@ -177,7 +169,7 @@ const checkTextArea = (input) => {
         return;
     }
     if(!validTextArea(input)) {
-        showError(input, `No se permiten los siguientes caracteres: %, &, |, <>, #`)
+        showError(input, `No se permiten los siguientes caracteres: %, &, |, <, >, #`)
         return;
     };
     showSuccess(input);
@@ -185,9 +177,9 @@ const checkTextArea = (input) => {
     return valid;
 }
 
-// Expresion regular del Text Area
+// Expresion regular del Text Area (RegEx = Regular Expression)
 const validTextArea = (input) => {
-    const regEx = /^[^%&|<>#]*$/ // Expresion regular del Text Area para que no se permitan los simbolos: %, &, |, <>, #.
+    const regEx = /^[^%&|<>#]*$/ // Expresion regular del Text Area para que no se permitan los simbolos: %, &, |, <, >, #.
     return regEx.test(input.value)
 }
 
@@ -209,7 +201,8 @@ const validateForm = () => {
     }
 }
 
-// Funcion inicializadora para llamar a los Listeners y el init.
+// ------------------------------- Funcion inicializadora para llamar a los Listeners y el init. ------------------------------- //
+
 const init = () => {
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
@@ -217,15 +210,14 @@ const init = () => {
     menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
 
 
-    // ---- LISTENERS DE LA SECCION CONTACT US ---- //
+                        // ---------------- LISTENERS DE LA SECCION CONTACT US ----------------  //
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         validateForm()
-    }) // Listener del formulario de la section de ContactUs.
+    }) // Listener del formulario de la section de ContactUs. Prevengo el comportamiento default y valido el formulario.
     inputName.addEventListener("input", () => checkTextInput (inputName))
     inputLastName.addEventListener("input", () => checkTextInput (inputLastName)) 
     inputEmail.addEventListener("input", () => checkEmail(inputEmail))
     inputTextArea.addEventListener("input", () => checkTextArea(inputTextArea))
-
 };
 init()

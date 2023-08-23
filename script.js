@@ -15,6 +15,8 @@ const form = document.getElementById("contact-form")
 const inputName = document.getElementById("name")
 const inputLastName = document.getElementById("lastname")
 const inputEmail = document.getElementById("email")
+const inputTextArea = document.getElementById("textarea")
+
 
 
 // Funcion para renderizar la lista de productos.
@@ -90,10 +92,6 @@ const saveCart = () => {
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
 
-const validateForm = e => {
-    e.preventDefault();
-}
-
 // Validar cantidad de caracteres de un input
 const checkTextInput = (input) => {
     // Aplicar la validez del value en false.
@@ -107,7 +105,7 @@ const checkTextInput = (input) => {
         return
     };
 
-    // Esto va a controlar que el campo de LastName y Name tengan entre 4 y 32 caracteres.
+    // Esto va a controlar que el campo de LastName y Name tengan entre 4 y 20 caracteres.
     if(!isBetween(input, minCharacters, maxCharacters)) {
         showError(
             input, `Este campo debe tener entre ${minCharacters} y ${maxCharacters} caracteres`
@@ -165,12 +163,47 @@ const checkEmail = (input) => {
     return valid;
 }
 
-
+// Para validar el input del Email, con una expresion regular. Si hay un espacio, este pasa por el showError.
 const validEmail = (input) => {
     const regularExpression = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
     return regularExpression.test(input.value)
 };
 
+// Validar el TextArea junto a una expresion regular para no permitir ciertos simbolos.
+const checkTextArea = (input) => {
+    let valid = false;
+    if(isEmpty(input)) {
+        showError(input, `Este campo es obligatorio.`)
+        return;
+    }
+    if(!validTextArea(input)) {
+        showError(input, `No se permiten los siguientes caracteres: %, &, |, <>, #`)
+        return;
+    };
+    showSuccess(input);
+    valid = true;
+    return valid;
+}
+
+
+const validTextArea = (input) => {
+    const regEx = /^[^%&|<>#]*$/ // Expresion regular del Text Area para que no se permitan los simbolos: %, &, |, <>, #.
+    return regEx.test(input.value)
+}
+
+// Validar el formulario de Contact Us.
+const validateForm = () => {
+    const validName = checkTextInput(inputName);
+    const lastNameValid = checkTextInput(inputLastName);
+    const emailValid = checkEmail(inputEmail);
+    const textAreaValid = checkTextArea(inputTextArea);
+    
+    if(validName && lastNameValid && emailValid && textAreaValid) {
+        
+    } else {
+        
+    }
+}
 
 // Funcion inicializadora para llamar a los Listeners y el init.
 const init = () => {
@@ -181,9 +214,14 @@ const init = () => {
 
 
     // ---- LISTENERS DE LA SECCION CONTACT US ---- //
-    form.addEventListener("submit", validateForm) // Listener del formulario de la section de ContactUs.
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        validateForm()
+    }) // Listener del formulario de la section de ContactUs.
     inputName.addEventListener("input", () => checkTextInput (inputName))
     inputLastName.addEventListener("input", () => checkTextInput (inputLastName)) 
     inputEmail.addEventListener("input", () => checkEmail(inputEmail))
+    inputTextArea.addEventListener("input", () => checkTextArea(inputTextArea))
+
 };
 init()

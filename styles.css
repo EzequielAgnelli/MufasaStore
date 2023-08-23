@@ -885,7 +885,7 @@ border-radius: 12px;
 background-color: #fff;
 outline: 1px solid crimson;
 width: 400px;
-height: 490px;
+height: 580px;
 }   
 
 .contactus-top h4 {
@@ -960,12 +960,27 @@ background-color: rgb(50, 50, 250);
     max-width: 350px;
     text-align: center;
     display: none;
+    font-weight: 800;
+    margin-top: 8px;
 }
 
 #contactus-error {
     color: red;
 }
 
+#message.success {
+    text-align: center;
+    color: green;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+#message.error {
+    text-align: center;
+    color: red;
+    font-weight: 800;
+    max-width: 280px;
+}
                                                                     /* FOOTER */
 #footer {
     display: flex;

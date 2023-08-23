@@ -16,8 +16,8 @@ const inputName = document.getElementById("name")
 const inputLastName = document.getElementById("lastname")
 const inputEmail = document.getElementById("email")
 const inputTextArea = document.getElementById("textarea")
-
-
+const formMessage = document.getElementById("message")
+// ------------------------------------------------------------------ //
 
 // Funcion para renderizar la lista de productos.
 const createProductTemplate = (product) => {
@@ -185,7 +185,7 @@ const checkTextArea = (input) => {
     return valid;
 }
 
-
+// Expresion regular del Text Area
 const validTextArea = (input) => {
     const regEx = /^[^%&|<>#]*$/ // Expresion regular del Text Area para que no se permitan los simbolos: %, &, |, <>, #.
     return regEx.test(input.value)
@@ -199,9 +199,13 @@ const validateForm = () => {
     const textAreaValid = checkTextArea(inputTextArea);
     
     if(validName && lastNameValid && emailValid && textAreaValid) {
-        
+        formMessage.textContent = "Formulario enviado con exito."
+        formMessage.classList.remove("error")
+        formMessage.classList.add("success")
     } else {
-        
+        formMessage.textContent = "Hay campos del formulario con errores. Porfavor verificalos y volve a intentarlo."
+        formMessage.classList.remove("success")
+        formMessage.classList.add("error")
     }
 }
 

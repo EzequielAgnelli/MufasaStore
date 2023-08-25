@@ -2,13 +2,14 @@
 const productsContainer = document.querySelector(".products-filter-container") //
 const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
 
-// ------------ DOM encargado de llamar al Carrito y al Menu.  ------------ //
+// ------------ DOM encargado de llamar al Carrito, menu y demas elementos relacionados.  ------------ //
 const cartBtn = document.querySelector(".cart-label")
 const menuBtn = document.querySelector(".menu-label")
 const cartMenu = document.querySelector(".cart")
 const barsMenu = document.querySelector(".navbar-links")
 const overlay = document.querySelector(".overlay")
 const productsCart = document.querySelector(".cart-container")
+const total = document.querySelector(".total")
 
 // ------------ DOM encargado de llamar a la seccion Contact Us ------------ //
 const form = document.getElementById("contact-form")
@@ -129,8 +130,29 @@ const renderCart = () => {
 } 
 
 const createCartProductTemplate = (cartProduct) => {
-    const {id, nombre, precio, marca, cardImg, quantity} = cartProduct
-    return ``
+    const {id, nombre, precio, cardImg, quantity} = cartProduct
+    return `<div class="cart-item">
+    <img src=${cardImg} alt="Producto seleccionado" />
+    <div class="item-info">
+    <h3 class="item-name">${nombre}</h3>
+    <p class="item-bid">Productos Actuales:</p>
+    <span class="item-price">${precio}</span>
+    </div>
+    <div class="item-handler">
+    <span class="quantity-handler down" data-id=${id}>-</span>
+    <span class="item-quantity">${quantity}</span>
+    <span class="quantity-handler up" data-id=${id}>+</span>
+    </div>
+</div>`
+}
+
+// Funcion para mostrar el total de la compra.
+const showCartTotalPrice = () => {
+    total.innerHTML = `${getCartTotal().toFixed(2)} pesos.`
+}
+
+const getCartTotal = () => {
+    return cart.reduce((acumulador, actualPrice) => acumulador + Number(actualPrice.precio) * actualPrice.quantity, 0) 
 }
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
@@ -263,6 +285,7 @@ const init = () => {
     barsMenu.addEventListener("click", closeOnClick)
     overlay.addEventListener("click", closeOverlayOnClick)
     document.addEventListener("DOMContentLoaded", renderCart)
+    document.addEventListener("DOMContentLoaded", showCartTotalPrice)
                         // ---------------- LISTENERS DE LA SECCION CONTACT US ----------------  //
     form.addEventListener("submit", (e) => {
         e.preventDefault();

@@ -169,6 +169,8 @@ header img {
 
 .cart-empty-msg p {
     color: black;
+    font-weight: 800;
+    
 }
 
 #cart-toggle:checked + .cart {

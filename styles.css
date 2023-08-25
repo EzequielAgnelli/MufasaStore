@@ -167,6 +167,10 @@ header img {
     transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
+.cart-empty-msg p {
+    color: black;
+}
+
 #cart-toggle:checked + .cart {
     /* display: flex; */
     transform: translate(0);
@@ -184,10 +188,6 @@ header img {
     align-items: center;
     gap: 15px;
     outline: 1px solid black;
-}
-
-.empty-cart-text {
-    color: black;
 }
 
 .item-info {
@@ -307,14 +307,6 @@ display: block;
     transform: translate(0%);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
-
-.open-menu {
-    /* transform: translateX(0%);
-    transition: all 0.3s ease; */
-    display: flex;
-}
-
-
 
                                                                     /* MAIN */
                                                                             /* PORTADA */
@@ -978,7 +970,7 @@ background-color: rgb(50, 50, 250);
 #message.error {
     text-align: center;
     color: red;
-    font-weight: 800;
+    font-weight: 800;   
     max-width: 280px;
 }
                                                                     /* FOOTER */
@@ -1060,13 +1052,6 @@ background-color: rgb(50, 50, 250);
         gap: 15px;
     }
 
-    .cart-img {
-        width: 65px;
-        height: 65px;
-        margin-right: 5rem;
-        margin-top: 4px;
-    }
-
     .navbar-links {
         position: absolute;
         top: 75px;
@@ -1083,7 +1068,7 @@ background-color: rgb(50, 50, 250);
         padding: 25px 15px;
         gap: 15px;
         z-index: 2;
-        /* display: none;  Con esto comentado, el menu se me muestra pero nunca lo puedo volver a ocultar. */
+        display: none;
     }
 
                             /* MENU */
@@ -1093,9 +1078,9 @@ order: -1;
 cursor: pointer;
 }
 
-/* #menu-toggle:checked + .navbar-links {
-    display: flex;
-}  */
+    .open-menu {
+        display: flex; 
+    }
 
                             /* PORTADA */
 #portada {
@@ -1320,11 +1305,11 @@ cursor: pointer;
     flex-direction: column;
 }
                             /* CATALOGUE */
-    #catalogue {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+#catalogue {
+width: 100%;
+justify-content: center;
+align-items: center;
+text-align: center;
 }
 
 .catalogue-container {

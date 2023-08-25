@@ -1,8 +1,8 @@
-// DOM generador de productos de la section --- PRODUCTS BY FILTER ---
+// ------------ DOM generador de productos de la section PRODUCTS BY FILTER ------------ //
 const productsContainer = document.querySelector(".products-filter-container") //
 const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
 
-// DOM encargado de llamar al Carrito y al Menu.
+// ------------ DOM encargado de llamar al Carrito y al Menu.  ------------ //
 const cartBtn = document.querySelector(".cart-label")
 const menuBtn = document.querySelector(".menu-label")
 const cartMenu = document.querySelector(".cart")
@@ -10,7 +10,7 @@ const barsMenu = document.querySelector(".navbar-links")
 const overlay = document.querySelector(".overlay")
 const productsCart = document.querySelector(".cart-container")
 
-// DOM encargado de llamar a la seccion Contact Us
+// ------------ DOM encargado de llamar a la seccion Contact Us ------------ //
 const form = document.getElementById("contact-form")
 const inputName = document.getElementById("name")
 const inputLastName = document.getElementById("lastname")
@@ -30,6 +30,7 @@ return `
 <p>${nombre}</p>
 <span>${marca}</span>
 <h4>${precio}</h4>
+
 <button class="btn-add"
 data-id='${id}'
 data-name='${nombre}'
@@ -81,6 +82,56 @@ const toggleMenu = () => {
     }
     overlay.classList.toggle("show-overlay")
 };
+
+// Funcion para cerrar el menu y carrito cuando el usuario empiece a scrollear con uno de estos abiertos.
+const closeOnScroll = () =>  {
+    if(
+        !barsMenu.classList.contains("open-menu")
+        && !cartMenu.classList.contains("open-cart")
+        ){
+            return
+        };
+        barsMenu.classList.remove("open-menu")
+        cartMenu.classList.remove("open-cart")
+        overlay.classList.remove("show-overlay")
+    }
+
+// Funcion para cerrar el menu cuando se clickee un elemento de este mismo.
+const closeOnClick = () => {
+    if(!e.target.classList.contains("navbar-list")) 
+    return
+    barsMenu.classList.remove("open-menu")
+    barsMenu.classList.remove("show-overlay")
+}
+
+// Funcion para cerrar el menu o carrito cuando se haga click fuera de este, es decir, en el overlay.
+const closeOverlayOnClick = () => {
+    barsMenu.classList.remove("open-menu")
+    cartMenu.classList.remove("open-cart")
+    overlay.classList.remove("show-overlay")
+}
+
+// Renderizar carrito de compras.
+// Guardar el carrito de compras en el Local Storage.
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+}
+
+// Funcion para renderizar los productos del carrito.
+const renderCart = () => {
+    if(!cart.length) {
+        productsCart.innerHTML = `<p class="cart-empty-msg">No hay productos en tu carrito de compras.</p>`;
+        return
+    }
+    productsCart.innerHTML = cart.map(createCartProductTemplate).join("")
+} 
+
+const createCartProductTemplate = (cartProduct) => {
+    const {id, nombre, precio, marca, cardImg, quantity} = cartProduct
+    return ``
+}
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
 
@@ -208,8 +259,10 @@ const init = () => {
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
     cartBtn.addEventListener("click", toggleCart) // Para togglear el Carrito.
     menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
-
-
+    window.addEventListener("scroll", closeOnScroll)
+    barsMenu.addEventListener("click", closeOnClick)
+    overlay.addEventListener("click", closeOverlayOnClick)
+    document.addEventListener("DOMContentLoaded", renderCart)
                         // ---------------- LISTENERS DE LA SECCION CONTACT US ----------------  //
     form.addEventListener("submit", (e) => {
         e.preventDefault();

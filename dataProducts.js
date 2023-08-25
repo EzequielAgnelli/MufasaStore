@@ -114,6 +114,24 @@ const productsData = [
         category: "Puma",
         marca: "Puma",
         cardImg: './Products/basketball-Court-Rider-Chaos.png'
+    },
+
+    {
+        id: 14,
+        nombre: "Gucci Ace con Tribanda - Mujer",
+        precio: 200000,
+        category: "Gucci",
+        marca: "Gucci",
+        cardImg: './Products/Gucci-Ace-Tribanda.png'
+    },
+
+    {
+        id: 15,
+        nombre: "Gucci Light con Tribanda - Hombre",
+        precio: 200000,
+        category: "Gucci",
+        marca: "Gucci",
+        cardImg: './Products/Gucci-Light-Tribanda.png'
     }
 ];
 // Agregar 2 productos mas.

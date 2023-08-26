@@ -10,7 +10,7 @@ const barsMenu = document.querySelector(".navbar-links")
 const overlay = document.querySelector(".overlay")
 const productsCart = document.querySelector(".cart-container")
 const total = document.querySelector(".total")
-
+const popUpMsg = document.querySelector(".add-popup")
 // ------------ DOM encargado de llamar a la seccion Contact Us ------------ //
 const form = document.getElementById("contact-form")
 const inputName = document.getElementById("name")
@@ -20,7 +20,7 @@ const inputTextArea = document.getElementById("textarea")
 const formMessage = document.getElementById("message")
 // ------------------------------------------------------------------ //
 
-// Funcion para renderizar la lista de productos.
+// Funcion que crea el template de los productos.
 const createProductTemplate = (product) => {
 const {id, nombre, precio, marca, cardImg} = product
 return `
@@ -62,6 +62,7 @@ const renderProducts = (productsList) => {
     .map(createProductTemplate)
     .join('');
 };
+                                    // -------------------------- CARRITO Y MENU -------------------------- //
 
 // Activar el cart y si el menu esta abierto que se cierre el carrito.
 const toggleCart = () => {
@@ -151,8 +152,69 @@ const showCartTotalPrice = () => {
     total.innerHTML = `${getCartTotal().toFixed(2)} pesos.`
 }
 
+// Para ir sumando el precio de los productos en el carrito.
 const getCartTotal = () => {
-    return cart.reduce((acumulador, actualPrice) => acumulador + Number(actualPrice.precio) * actualPrice.quantity, 0) 
+    return cart.reduce((accumulator, actualPrice) => accumulator + Number(actualPrice.precio) * actualPrice.quantity, 0) 
+}
+
+const addProducts = e => {
+    if(!e.target.classList.contains("btn-add"))
+    {return}
+
+    // Funcion para desestructurar.
+    const product = createProductData(e.target.dataset)
+    //  Ahora compruebo si ya hay productos en el carro de compras. (Con una funcion auxiliar)
+    if(isProductInCart(product)) {
+        addUnitToProduct(product); 
+
+    // Mostrar el mensaje popUp.
+    showPopUp("Se agrego correctamente una unidad al carrito de compras.")
+    } else {
+        //  Crear producto dentro del carrito.
+        productInCart(product);
+        showPopUp("se agrego correctamente un producto al carrito de compras.")
+    }
+        cartState()
+};
+
+// Funcion desestructuradora
+const createProductData = (product) => {
+    const {id, nombre, precio, cardImg} = product
+    return {id, nombre, precio, cardImg}
+}
+
+const isProductInCart = (product) => {
+    return cart.find((item) => item.id === product.id);
+}
+
+// Funcion para agregar una unidad a un producto ya existente en el carrito de compras.
+const addUnitToProduct = (product) => {
+    cart = cart.map((cartProduct) =>
+    cartProduct.id === product.id
+    ? {...cartProduct, quantity: cartProduct.quantity + 1}
+    : cartProduct);
+};
+
+// Mensaje popUp al agregar un producto al carrito.
+const showPopUp = (msg) => {
+    popUpMsg.classList.add("active-popup")
+    popUpMsg.textContent = msg
+    setTimeout(() => {
+        active-popup.classList.remove("active-popup")
+    }, 2500);
+}
+
+const productInCart = (product) => {
+    cart = [...cart, {...product, quantity: 1}]
+};
+
+// Funcion para ir actualizando el carrito cada vez que se agrega un producto.
+const cartState = () => {
+    // Local Storage del carrito.
+    saveCart()
+    renderCart()
+    showCartTotalPrice()
+    
 }
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 

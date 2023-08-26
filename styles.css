@@ -849,6 +849,26 @@ display: block;
     display: none;
 }
 
+/* Un PopUp para cuando alguien agregue un producto al carrito de compras. */
+.add-popup {
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    background-color: crimson;
+    font-weight: 800;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.5s ease-in;
+    transform: translateY(200%);
+}
+
+.active-popup {
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
                                                                     /* CONTACT US */
 #contactus {
     display: flex;

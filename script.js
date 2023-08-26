@@ -36,7 +36,8 @@ return `
 data-id='${id}'
 data-name='${nombre}'
 data-price='${precio}'
-data-img='${cardImg}'>Agregar al carrito</button>
+data-img='${cardImg}'>Agregar al carrito
+</button>
 </div> 
 </div> `
 };
@@ -157,7 +158,7 @@ const getCartTotal = () => {
     return cart.reduce((accumulator, actualPrice) => accumulator + Number(actualPrice.precio) * actualPrice.quantity, 0) 
 }
 
-const addProducts = (e) => {
+const addProduct = (e) => {
     if(!e.target.classList.contains("btn-add"))
     {return};
 
@@ -171,8 +172,8 @@ const addProducts = (e) => {
     showPopUp("Se agrego correctamente una unidad al carrito de compras.")
     } else {
         productInCart(product);
-        showPopUp("se agrego correctamente un producto al carrito de compras.")
-    }
+        showPopUp("Se agrego correctamente un producto al carrito de compras.")
+    };
         cartState()
 };
 
@@ -184,7 +185,7 @@ const createProductData = (product) => {
 
 const isProductInCart = (product) => {
     return cart.find((item) => item.id === product.id);
-}
+};
 
 // Funcion para agregar una unidad a un producto ya existente en el carrito de compras.
 const addUnitToProduct = (product) => {
@@ -205,15 +206,15 @@ const showPopUp = (msg) => {
 };
 
 const productInCart = (product) => {
-    cart = [...cart, {...product, quantity: 1}]
+    cart = [...cart, { ...product, quantity: 1 }];
 };
 
 // Funcion para ir actualizando el carrito cada vez que se agrega un producto.
 const cartState = () => {
     // Local Storage del carrito.
-    saveCart()
-    renderCart()
-    showCartTotalPrice()
+    saveCart();
+    renderCart();
+    showCartTotalPrice();
 
 }
 

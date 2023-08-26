@@ -871,6 +871,7 @@ display: block;
     transform: translateY(0);
     transition: all 0.5s ease;
 }
+
                                                                     /* CONTACT US */
 #contactus {
     display: flex;
@@ -996,6 +997,7 @@ background-color: rgb(50, 50, 250);
     font-weight: 800;   
     max-width: 280px;
 }
+
                                                                     /* FOOTER */
 #footer {
     display: flex;

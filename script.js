@@ -157,9 +157,9 @@ const getCartTotal = () => {
     return cart.reduce((accumulator, actualPrice) => accumulator + Number(actualPrice.precio) * actualPrice.quantity, 0) 
 }
 
-const addProducts = e => {
+const addProducts = (e) => {
     if(!e.target.classList.contains("btn-add"))
-    {return}
+    {return};
 
     // Funcion para desestructurar.
     const product = createProductData(e.target.dataset)
@@ -170,7 +170,6 @@ const addProducts = e => {
     // Mostrar el mensaje popUp.
     showPopUp("Se agrego correctamente una unidad al carrito de compras.")
     } else {
-        //  Crear producto dentro del carrito.
         productInCart(product);
         showPopUp("se agrego correctamente un producto al carrito de compras.")
     }
@@ -191,8 +190,9 @@ const isProductInCart = (product) => {
 const addUnitToProduct = (product) => {
     cart = cart.map((cartProduct) =>
     cartProduct.id === product.id
-    ? {...cartProduct, quantity: cartProduct.quantity + 1}
-    : cartProduct);
+    ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+    : cartProduct
+    );
 };
 
 // Mensaje popUp al agregar un producto al carrito.
@@ -200,9 +200,9 @@ const showPopUp = (msg) => {
     popUpMsg.classList.add("active-popup")
     popUpMsg.textContent = msg
     setTimeout(() => {
-        active-popup.classList.remove("active-popup")
+        popUpMsg.classList.remove("active-popup")
     }, 2500);
-}
+};
 
 const productInCart = (product) => {
     cart = [...cart, {...product, quantity: 1}]

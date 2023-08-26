@@ -858,6 +858,8 @@ display: block;
     font-weight: 800;
     font-size: 19px;
     display: flex;
+    position: fixed;
+    bottom: 0;
     justify-content: center;
     align-items: center;
     padding: 10px;

@@ -149,7 +149,7 @@ const createCartProductTemplate = (cartProduct) => {
 
 // Funcion para mostrar el total de la compra.
 const showCartTotalPrice = () => {
-    total.innerHTML = `${getCartTotal().toFixed(2)} pesos.`
+    total.innerHTML = `$${getCartTotal().toFixed(2)}`
 }
 
 // Para ir sumando el precio de los productos en el carrito.
@@ -214,7 +214,7 @@ const cartState = () => {
     saveCart()
     renderCart()
     showCartTotalPrice()
-    
+
 }
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 

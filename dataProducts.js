@@ -63,75 +63,75 @@ const productsData = [
     },
 
     {
-        id: 8,
-        nombre: "Rebound",
-        precio: 65000,
-        category: "Converse",
-        marca: "Converse",
-        cardImg: './Products/Rebound.png',
+    id: 8,
+    nombre: "Rebound",
+    precio: 65000,
+    category: "Converse",
+    marca: "Converse",
+    cardImg: './Products/Rebound.png',
     },
 
     {
-        id: 9,
-        nombre: "Fastbreak Pro Mid",
-        precio: 75000,
-        category: "Converse",
-        marca: "Converse",
-        cardImg: './Products/Fastbreak-Pro-Mid.png'
+    id: 9,
+    nombre: "Fastbreak Pro Mid",
+    precio: 75000,
+    category: "Converse",
+    marca: "Converse",
+    cardImg: './Products/Fastbreak-Pro-Mid.png'
     },
 
     {
-        id: 10,
-        nombre: "Cuck Taylor All Star",
-        precio: 90000,
-        category: "Converse",
-        marca: "Converse",
-        cardImg: './Products/Cuck-Taylor-All-Star.png'
+    id: 10,
+    nombre: "Cuck Taylor All Star",
+    precio: 90000,
+    category: "Converse",
+    marca: "Converse",
+    cardImg: './Products/Cuck-Taylor-All-Star.png'
     },
 
     {
-        id: 11,
-        nombre: "Suede Classic XXI",
-        precio: 45600,
-        category: "Puma",
-        marca: "Puma",
-        cardImg: './Products/Suede-Classic-XXI.png'
+    id: 11,
+    nombre: "Suede Classic XXI",
+    precio: 45600,
+    category: "Puma",
+    marca: "Puma",
+    cardImg: './Products/Suede-Classic-XXI.png'
     },
 
     {
-        id: 12,
-        nombre: "Slip Stream",
-        precio: 50000,
-        category: "Puma",
-        marca: "Puma",
-        cardImg: './Products/SlipStream.png'
+    id: 12,
+    nombre: "Slip Stream",
+    precio: 50000,
+    category: "Puma",
+    marca: "Puma",
+    cardImg: './Products/SlipStream.png'
     },
 
     {
-        id: 13,
-        nombre: "Court Rider Chaos",
-        precio: 75400,
-        category: "Puma",
-        marca: "Puma",
-        cardImg: './Products/basketball-Court-Rider-Chaos.png'
+    id: 13,
+    nombre: "Court Rider Chaos",
+    precio: 75400,
+    category: "Puma",
+    marca: "Puma",
+    cardImg: './Products/basketball-Court-Rider-Chaos.png'
     },
 
     {
-        id: 14,
-        nombre: "Gucci Ace con Tribanda - Mujer",
-        precio: 200000,
-        category: "Gucci",
-        marca: "Gucci",
-        cardImg: './Products/Gucci-Ace-Tribanda.png'
+    id: 14,
+    nombre: "Gucci Ace con Tribanda - Mujer",
+    precio: 200000,
+    category: "Gucci",
+    marca: "Gucci",
+    cardImg: './Products/Gucci-Ace-Tribanda.png'
     },
 
     {
-        id: 15,
-        nombre: "Gucci Light con Tribanda - Hombre",
-        precio: 200000,
-        category: "Gucci",
-        marca: "Gucci",
-        cardImg: './Products/Gucci-Light-Tribanda.png'
+    id: 15,
+    nombre: "Gucci Light con Tribanda - Hombre",
+    precio: 200000,
+    category: "Gucci",
+    marca: "Gucci",
+    cardImg: './Products/Gucci-Light-Tribanda.png'
     }
 ];
 

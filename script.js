@@ -25,7 +25,7 @@ const createProductTemplate = (product) => {
 const {id, nombre, precio, marca, cardImg} = product
 return `
 <div class="product-filter">
-<img src=${cardImg} alt=${nombre} />
+<img src=${cardImg} alt=${nombre}>
 
 <div class="info-filter-top">
 <p>${nombre}</p>
@@ -34,8 +34,8 @@ return `
 
 <button class="btn-add"
 data-id='${id}'
-data-name='${nombre}'
-data-price='${precio}'
+data-nombre='${nombre}'
+data-precio='${precio}'
 data-img='${cardImg}'>Agregar al carrito
 </button>
 </div> 
@@ -132,9 +132,9 @@ const renderCart = () => {
 } 
 
 const createCartProductTemplate = (cartProduct) => {
-    const {id, nombre, precio, cardImg, quantity} = cartProduct
+    const {id, nombre, precio, img, quantity} = cartProduct
     return `<div class="cart-item">
-    <img src=${cardImg} alt="Producto seleccionado" />
+    <img src=${img} alt="Zapatillas seleccionadas">
     <div class="item-info">
     <h3 class="item-name">${nombre}</h3>
     <p class="item-bid">Productos Actuales:</p>
@@ -159,15 +159,15 @@ const getCartTotal = () => {
 }
 
 const addProduct = (e) => {
-    if(!e.target.classList.contains("btn-add"))
-    {return};
+    if(!e.target.classList.contains("btn-add")) 
+        {return};
 
     // Funcion para desestructurar.
-    const product = createProductData(e.target.dataset)
+    const product = createProductData(e.target.dataset);
     //  Ahora compruebo si ya hay productos en el carro de compras. (Con una funcion auxiliar)
     if(isProductInCart(product)) {
         addUnitToProduct(product); 
-
+        console.log("Product data:", product);
     // Mostrar el mensaje popUp.
     showPopUp("Se agrego correctamente una unidad al carrito de compras.")
     } else {
@@ -179,10 +179,11 @@ const addProduct = (e) => {
 
 // Funcion desestructuradora
 const createProductData = (product) => {
-    const {id, nombre, precio, cardImg} = product
-    return {id, nombre, precio, cardImg}
+    const {id, nombre, precio, img} = product
+    return {id, nombre, precio, img}
 }
 
+// Para agregar un producto que ya esta en el carrito de compras y se sume la cantidad.
 const isProductInCart = (product) => {
     return cart.find((item) => item.id === product.id);
 };
@@ -196,6 +197,11 @@ const addUnitToProduct = (product) => {
     );
 };
 
+// Para agregar un producto que aun no esta en el carrito de compras
+const productInCart = (product) => {
+    cart = [...cart, { ...product, quantity: 1 }];
+};
+
 // Mensaje popUp al agregar un producto al carrito.
 const showPopUp = (msg) => {
     popUpMsg.classList.add("active-popup")
@@ -205,10 +211,6 @@ const showPopUp = (msg) => {
     }, 2500);
 };
 
-const productInCart = (product) => {
-    cart = [...cart, { ...product, quantity: 1 }];
-};
-
 // Funcion para ir actualizando el carrito cada vez que se agrega un producto.
 const cartState = () => {
     // Local Storage del carrito.
@@ -216,7 +218,7 @@ const cartState = () => {
     renderCart();
     showCartTotalPrice();
 
-}
+};
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
 
@@ -248,7 +250,6 @@ const checkTextInput = (input) => {
 
 // Para setear cuando el input este vacio y se detecte.
 const isEmpty = (input) => {
-    // falsy.
     return !input.value.trim().length
 };
 
@@ -349,6 +350,7 @@ const init = () => {
     overlay.addEventListener("click", closeOverlayOnClick)
     document.addEventListener("DOMContentLoaded", renderCart)
     document.addEventListener("DOMContentLoaded", showCartTotalPrice)
+    productsContainer.addEventListener("click", addProduct)
                         // ---------------- LISTENERS DE LA SECCION CONTACT US ----------------  //
     form.addEventListener("submit", (e) => {
         e.preventDefault();

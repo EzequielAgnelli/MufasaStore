@@ -217,7 +217,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
 }
 
 .quantity-handler {
@@ -1251,10 +1251,12 @@ cursor: pointer;
 .info-product_top h4 {
     font-size: 24px;
 }
+
                             /* INFO-HELP */
 #info-help {
     background-color: transparent;
 }
+
 .info-container {
     justify-content: center;
     align-items: center;
@@ -1277,6 +1279,7 @@ cursor: pointer;
     width: 55px;
     height: 55px;
 }
+
                             /* FOOTER */
 #footer {
     flex-direction: column;
@@ -1291,9 +1294,10 @@ cursor: pointer;
 
 .socials {
     margin-top: 15px;
+    }
 }
-}
-                                                                            /* TELEFONOS */
+
+                                                            /************************** TELEFONOS ********************/
 @media (max-width: 576px) {
                             /* NAVBAR */
     header {
@@ -1329,6 +1333,7 @@ cursor: pointer;
 .item-handler {
     flex-direction: column;
 }
+
                             /* CATALOGUE */
 #catalogue {
 width: 100%;
@@ -1364,7 +1369,7 @@ text-align: center;
 .catalogue-image img {
     width: 240px;
     height: 240px;
-}
+    }
 }
 
                                                                             /* DEMAS PANTALLAS */
@@ -1375,6 +1380,7 @@ text-align: center;
         align-items: center;
     }
 }
+
                                                                             /* MONITORES 1366X768 */
 @media (max-width: 1366px) {
     .most-sold-container {

@@ -2,7 +2,7 @@ const productsData = [
     {
     id: 1,
     nombre: "Air Jordan 1 Mid SE",
-    precio: 70000,
+    precio: 82999,
     category: "Nike",
     marca: "Nike",
     cardImg: './Products/Air-Jordan-1Mid-SE-JS.png',
@@ -11,7 +11,7 @@ const productsData = [
     {
     id: 2,
     nombre: "Nike Air Force 1 Mid 07",
-    precio: 80000,
+    precio: 89999,
     category: "Nike",
     marca: "Nike",
     cardImg: './Products/Nike-Air-Force1-Mid-07-JS.png',
@@ -20,7 +20,7 @@ const productsData = [
     {
     id: 3,
     nombre: "Nike Air Max Pulse",
-    precio: 90000,
+    precio: 54999,
     category: "Nike",
     marca: "Nike",
     cardImg: './Products/Nike-Air-Max-Pulse-JS.png',
@@ -29,7 +29,7 @@ const productsData = [
     {
     id: 4,
     nombre: "Nike Dunk Low",
-    precio: 50000,
+    precio: 65999,
     category: "Nike",
     marca: "Nike",
     cardImg: './Products/Nike-Dunk-Low-JS.png'
@@ -38,7 +38,7 @@ const productsData = [
     {
     id: 5,
     nombre: "Yeezy Boost 350",
-    precio: 40000,
+    precio: 129999,
     category: "Adidas",
     marca: "Adidas",
     cardImg: './Products/Yeezy-Boost-350-V2-JS.png'
@@ -47,7 +47,7 @@ const productsData = [
     {
     id: 6,
     nombre: "Ultraboost Light",
-    precio: 30000,
+    precio: 111999,
     category: "Adidas",
     marca: "Adidas",
     cardImg: './Products/Ultraboost-Light-JS.png'
@@ -56,7 +56,7 @@ const productsData = [
     {
     id: 7,
     nombre: "Stan Smith x Andre Saraiva",
-    precio: 80000,
+    precio: 36299,
     category: "Adidas",
     marca: "Adidas",
     cardImg: './Products/Stan-Smith-x-Andre-Saraiva2-Adidas-JS.png'
@@ -65,7 +65,7 @@ const productsData = [
     {
     id: 8,
     nombre: "Rebound",
-    precio: 65000,
+    precio: 48999,
     category: "Converse",
     marca: "Converse",
     cardImg: './Products/Rebound.png',
@@ -74,7 +74,7 @@ const productsData = [
     {
     id: 9,
     nombre: "Fastbreak Pro Mid",
-    precio: 75000,
+    precio: 56699,
     category: "Converse",
     marca: "Converse",
     cardImg: './Products/Fastbreak-Pro-Mid.png'
@@ -83,7 +83,7 @@ const productsData = [
     {
     id: 10,
     nombre: "Cuck Taylor All Star",
-    precio: 90000,
+    precio: 50499,
     category: "Converse",
     marca: "Converse",
     cardImg: './Products/Cuck-Taylor-All-Star.png'
@@ -92,7 +92,7 @@ const productsData = [
     {
     id: 11,
     nombre: "Suede Classic XXI",
-    precio: 45600,
+    precio: 37799,
     category: "Puma",
     marca: "Puma",
     cardImg: './Products/Suede-Classic-XXI.png'
@@ -101,7 +101,7 @@ const productsData = [
     {
     id: 12,
     nombre: "Slip Stream",
-    precio: 50000,
+    precio: 50499,
     category: "Puma",
     marca: "Puma",
     cardImg: './Products/SlipStream.png'
@@ -110,7 +110,7 @@ const productsData = [
     {
     id: 13,
     nombre: "Court Rider Chaos",
-    precio: 75400,
+    precio: 84950,
     category: "Puma",
     marca: "Puma",
     cardImg: './Products/basketball-Court-Rider-Chaos.png'
@@ -119,7 +119,7 @@ const productsData = [
     {
     id: 14,
     nombre: "Gucci Ace con Tribanda - Mujer",
-    precio: 200000,
+    precio: 261015,
     category: "Gucci",
     marca: "Gucci",
     cardImg: './Products/Gucci-Ace-Tribanda.png'
@@ -128,7 +128,7 @@ const productsData = [
     {
     id: 15,
     nombre: "Gucci Light con Tribanda - Hombre",
-    precio: 200000,
+    precio: 261015,
     category: "Gucci",
     marca: "Gucci",
     cardImg: './Products/Gucci-Light-Tribanda.png'

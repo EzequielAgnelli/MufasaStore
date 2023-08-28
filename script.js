@@ -11,6 +11,7 @@ const overlay = document.querySelector(".overlay")
 const productsCart = document.querySelector(".cart-container")
 const total = document.querySelector(".total")
 const popUpMsg = document.querySelector(".add-popup")
+const btnCartPurchase = document.querySelector(".btn-cartpurchase")
 // ------------ DOM encargado de llamar a la seccion Contact Us ------------ //
 const form = document.getElementById("contact-form")
 const inputName = document.getElementById("name")
@@ -23,6 +24,14 @@ const formMessage = document.getElementById("message")
 // Funcion que crea el template de los productos.
 const createProductTemplate = (product) => {
 const {id, nombre, precio, marca, cardImg} = product
+
+// Formatear el precio para poder poner un signo de pesos ($).
+// const priceFormat = precio.toLocaleString("es-AR", {
+//     style: "currency",
+//     currency: "ARS"
+// });
+// Esto esta comentado porque me hice mucho problema. Todo era mas facil agregando un simple $ en las backticks.
+
 return `
 <div class="product-filter">
 <img src=${cardImg} alt=${nombre}>
@@ -30,7 +39,7 @@ return `
 <div class="info-filter-top">
 <p>${nombre}</p>
 <span>${marca}</span>
-<h4>${precio}</h4>
+<h4>$${precio}</h4> 
 
 <button class="btn-add"
 data-id='${id}'
@@ -39,7 +48,7 @@ data-precio='${precio}'
 data-img='${cardImg}'>Agregar al carrito
 </button>
 </div> 
-</div> `
+</div>   `
 };
 
 // Funcion para mostrar mas productos en el boton de "Ver mas".
@@ -133,12 +142,17 @@ const renderCart = () => {
 
 const createCartProductTemplate = (cartProduct) => {
     const {id, nombre, precio, img, quantity} = cartProduct
+    const priceFormat = precio.toLocaleString("es-AR", {
+        style: "currency",
+        currency: "ARS"
+    });
+
     return `<div class="cart-item">
     <img src=${img} alt="Zapatillas seleccionadas">
     <div class="item-info">
     <h3 class="item-name">${nombre}</h3>
     <p class="item-bid">Productos Actuales:</p>
-    <span class="item-price">${precio}</span>
+    <span class="item-price">$${precio}</span>
     </div>
     <div class="item-handler">
     <span class="quantity-handler down" data-id=${id}>-</span>
@@ -218,6 +232,56 @@ const cartState = () => {
     renderCart();
     showCartTotalPrice();
 
+};
+
+// Al tocar el boton de "Terminar compra" saldra una alert con este texto.
+const completePurchase = () => {
+    completeCartPurchase("¿Quiere terminar con su compra?", "¡Gracias por elegirnos! Tu compra se proceso correctamente. Te llegara un recibo en tu correo electronico en la brevedad.")
+}
+
+const completeCartPurchase = (confirmMsg, successMsg) => {
+    if(!cart.length) return;
+    if(window.confirm(confirmMsg)) {
+        alert(successMsg);
+    };
+};
+
+// Funcion para eliminar un producto del carrito.
+const removeProductCart = (existingProduct) => {
+    cart = cart.filter((product) => product.id !== existingProduct.id)
+    cartState();
+};
+
+// Funcion para agregar mas unidades de un producto.
+const handleMoreBtnEvent = (id) => {
+    const existingCartProduct = cart.find((item) => item.id === id);
+    addUnitToProduct(existingCartProduct)
+}
+
+const handleLessBtnEvent = (id) => {
+    const existingCartProduct = cart.find((item) => item.id === id)
+    if(existingCartProduct.quantity === 1) {
+        removeProductCart(existingCartProduct)
+    }
+    substractProductUnit(existingCartProduct);
+}
+
+const substractProductUnit = (existingCartProduct) => {
+    cart = cart.map((product) => {
+        return product.id === existingCartProduct.id
+        ? {...product, quantity: Number(product.quantity) - 1}
+        : product;
+    });
+};
+
+// Funcion para agregar mas productos en el carrito o sacar productos del carrito.
+const quantityHandler = e => {
+    if(e.target.classList.contains("down")) {
+        handleLessBtnEvent(e.target.dataset.id);
+    } else if (e.target.classList.contains("up")) {
+        handleMoreBtnEvent(e.target.dataset.id);
+    };
+    cartState();
 };
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 
@@ -329,6 +393,7 @@ const validateForm = () => {
     
     if(validName && lastNameValid && emailValid && textAreaValid) {
         formMessage.textContent = "Formulario enviado con exito."
+        // Tendras una respuesta en tu correo electronico en la brevedad.
         formMessage.classList.remove("error")
         formMessage.classList.add("success")
     } else {
@@ -351,6 +416,8 @@ const init = () => {
     document.addEventListener("DOMContentLoaded", renderCart)
     document.addEventListener("DOMContentLoaded", showCartTotalPrice)
     productsContainer.addEventListener("click", addProduct)
+    productsCart.addEventListener("click", quantityHandler)
+    btnCartPurchase.addEventListener("click", completePurchase)
                         // ---------------- LISTENERS DE LA SECCION CONTACT US ----------------  //
     form.addEventListener("submit", (e) => {
         e.preventDefault();

@@ -28,7 +28,9 @@ header {
     align-items: center;
     height: 65px;
     width: 100%;
-    background-color: rgb(56, 56, 56);
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
     position: fixed;
     top: 0;
     z-index: 2;

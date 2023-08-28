@@ -316,7 +316,7 @@ display: block;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 900px;
+    height: 970px;
     color: white;
     display: flex;
     justify-content: center;
@@ -346,9 +346,9 @@ display: block;
 }
 
 .portada-info p {
-    font-size: 19px;
+    font-size: 19.5px;
     font-weight: 800;
-    color: black;
+    color: yellow;
     margin-bottom: 40px;
 }
 
@@ -757,6 +757,24 @@ display: block;
     letter-spacing: 1px;
 }
 
+.category {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 800;
+    margin: 2px;
+    border: none;
+    color: white;
+    background-color: crimson;
+    border-radius: 7px;
+    transition: .5s ;
+    text-transform: uppercase;
+}
+
+.category:hover {
+    box-shadow: 0 0 35px crimson;
+}
+
 .categories {
     margin-bottom: 10px;
 }
@@ -827,7 +845,7 @@ display: block;
 }
 
 .btn-add:hover {
-    box-shadow: 0 0 20px crimson;
+    box-shadow: 0 0 30px crimson;
 }
 
 .btn-moreproducts {

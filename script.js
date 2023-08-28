@@ -1,7 +1,8 @@
-// ------------ DOM generador de productos de la section PRODUCTS BY FILTER ------------ //
+// ------------ DOM generador de productos de la section PRODUCTS BY FILTER y categorias ------------ //
 const productsContainer = document.querySelector(".products-filter-container") //
 const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
-
+const categories = document.querySelector(".categories")
+const categoriesList = document.querySelector(".category")
 // ------------ DOM encargado de llamar al Carrito, menu y demas elementos relacionados.  ------------ //
 const cartBtn = document.querySelector(".cart-label")
 const menuBtn = document.querySelector(".menu-label")
@@ -72,6 +73,25 @@ const renderProducts = (productsList) => {
     .map(createProductTemplate)
     .join('');
 };
+
+// Funcioniones para filtrar las Zapatillas por categoria. En este caso, por marcas.
+const filterByCategory = ({target}) => {
+    if(!inactiveFilters(target)) 
+    return
+    changeFilter(target)
+};
+
+const inactiveFilters = (element) => {
+    return (
+        element.classList.contains("category") &&
+        !element.classList.contains("active")
+    )
+};
+
+const changeFilter = (btn) => {
+    appState.activeFilter = btn.dataset.category 
+    
+}
                                     // -------------------------- CARRITO Y MENU -------------------------- //
 
 // Activar el cart y si el menu esta abierto que se cierre el carrito.
@@ -406,10 +426,13 @@ const validateForm = () => {
 // ------------------------------- Funcion inicializadora para llamar a los Listeners y el init. ------------------------------- //
 
 const init = () => {
+    // ---------------- LISTENERS PARA RENDERIZAR PRODUCTOS DE LA SECTION PRODUCTS BY FILTER Y FILTRAR POR CATEGORIA. ----------------  // 
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
-    cartBtn.addEventListener("click", toggleCart) // Para togglear el Carrito.
-    menuBtn.addEventListener("click", toggleMenu) // Para togglear el Menu hamburguesa.
+    categories.addEventListener("click", filterByCategory)
+    // ---------------- LISTENERS DEL CARRITO, MENU Y RELACIONADOS. ----------------  //
+    cartBtn.addEventListener("click", toggleCart) 
+    menuBtn.addEventListener("click", toggleMenu) 
     window.addEventListener("scroll", closeOnScroll)
     barsMenu.addEventListener("click", closeOnClick)
     overlay.addEventListener("click", closeOverlayOnClick)

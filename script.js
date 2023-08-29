@@ -2,7 +2,7 @@
 const productsContainer = document.querySelector(".products-filter-container") //
 const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
 const categories = document.querySelector(".categories")
-const categoriesList = document.querySelector(".category")
+const categoriesList = document.querySelectorAll(".category")
 // ------------ DOM encargado de llamar al Carrito, menu y demas elementos relacionados.  ------------ //
 const cartBtn = document.querySelector(".cart-label")
 const menuBtn = document.querySelector(".menu-label")
@@ -25,13 +25,11 @@ const formMessage = document.getElementById("message")
 // Funcion que crea el template de los productos.
 const createProductTemplate = (product) => {
 const {id, nombre, precio, marca, cardImg} = product
-
 // Formatear el precio para poder poner un signo de pesos ($).
 // const priceFormat = precio.toLocaleString("es-AR", {
 //     style: "currency",
 //     currency: "ARS"
-// });
-// Esto esta comentado porque me hice mucho problema. Todo era mas facil agregando un simple $ en las backticks.
+// }); Esto esta comentado porque me hice mucho problema. Todo era mas facil agregando un simple $ en las backticks.
 
 return `
 <div class="product-filter">
@@ -79,6 +77,13 @@ const filterByCategory = ({target}) => {
     if(!inactiveFilters(target)) 
     return
     changeFilter(target)
+    productsContainer.innerHTML = ''
+    if(appState.activeFilter) {
+        renderFilteredProducts()
+        appState.currentProductsIndex = 0
+        return
+    }
+    renderProducts(appState.products[0])
 };
 
 const inactiveFilters = (element) => {
@@ -89,8 +94,28 @@ const inactiveFilters = (element) => {
 };
 
 const changeFilter = (btn) => {
-    appState.activeFilter = btn.dataset.category 
-    
+    appState.activeFilter = btn.dataset.category
+    changeActiveBtnState(appState.activeFilter);
+
+}
+
+// Funcion para cambiar el estado de los botones.
+const changeActiveBtnState = (categorySelected) => {
+    const categories = [...categoriesList];
+    categories.forEach((categoryBtn) => {
+        if(categoryBtn.dataset.category !== categorySelected) {
+            categoryBtn.classList.remove("active")
+            return
+        }
+        categoryBtn.classList.add("active")
+    })
+}
+
+const renderFilteredProducts = () => {
+    const filteredProducts = productsData.filter(
+        (product) => product.category === appState.activeFilter
+    )
+    renderProducts(filteredProducts)
 }
                                     // -------------------------- CARRITO Y MENU -------------------------- //
 

@@ -880,6 +880,11 @@ display: block;
     height: 40px;
     border-radius: 25px;
     padding: 8px;
+    transition: .5s;
+}
+
+.btn-moreproducts:hover {
+    box-shadow: 0 0 30px crimson;
 }
 
 /* Esto sera el hidden del boton de "Ver Mas". Clase para JS. */
@@ -1118,9 +1123,9 @@ background-color: rgb(50, 50, 250);
     }
 
     .navbar-links {
-        position: absolute;
-        top: 75px;
-        right: 5%;
+    position: absolute;
+    top: 75px;
+    right: 5%;
         left: 5%;
         width: 90%;
         flex-direction: column;
@@ -1146,9 +1151,9 @@ order: -1;
 cursor: pointer;
 }
 
-    .open-menu {
-        display: flex; 
-    }
+.open-menu {
+display: flex; 
+}
 
                             /* PORTADA */
 #portada {
@@ -1337,6 +1342,23 @@ cursor: pointer;
 .socials {
     margin-top: 15px;
     }
+
+                                /* CATEGORIES (BOTONES) */
+.categories {
+    flex-wrap: wrap;
+    max-width: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.category {
+    width: 110px;
+}
+
+                                /*  CONTACT US FORM */
+.contactus-form  {
+    width: 320px;
+}
 }
 
                                                             /************************** TELEFONOS ********************/
@@ -1412,6 +1434,19 @@ text-align: center;
     width: 240px;
     height: 240px;
     }
+
+                                    /* PRODUCTS BY FILTER */
+.product-filter img {
+    width: 240px;
+    height: 240px;
+    }
+.product-filter p {
+    font-size: 17px;
+}
+
+.btn-add {
+    width: 120px;
+}
 }
 
                                                                             /* DEMAS PANTALLAS */

@@ -117,7 +117,16 @@ const productsData = [
     },
 
     {
-    id: 14,
+        id: 14,
+        nombre: "Fila Renno Animal",
+        precio: 69340,
+        category: "Fila",
+        marca: "Fila",
+        cardImg: './Products/Fila-Renno-Animal.png'
+    },
+
+    {
+    id: 15,
     nombre: "Gucci Ace con Tribanda - Mujer",
     precio: 261015,
     category: "Gucci",
@@ -126,7 +135,7 @@ const productsData = [
     },
 
     {
-    id: 15,
+    id: 16,
     nombre: "Gucci Light con Tribanda - Hombre",
     precio: 261015,
     category: "Gucci",

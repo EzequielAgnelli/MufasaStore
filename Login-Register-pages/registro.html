@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bitter:wght@200&family=Indie+Flower&family=Lato:wght@300&family=Lora&family=Manrope:wght@200&family=Mulish:wght@200&family=Nunito:wght@200;300&family=Open+Sans&family=PT+Sans&family=Poppins&family=Roboto:ital,wght@1,300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/Navbar/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="./CSS/registro.css">
     <title>Registro / Mufasa</title>
 </head>
 <body>
@@ -29,29 +29,50 @@
         </header>
 
         <main>
-            <form>
-                <section id="formulario">
+            <form id="form">
                     <div class="formulario-inicio">
                         <h1>Registrarse</h1>
                     </div>
-                    <div class="formulario-top">
+            <div class="formulario-top">
+                    <div class="form__field">
                         <h4></h4>
-                        <input type="text" class="input" placeholder="Tu nombre completo" required>
+                        <input type="text" class="input" id="nombre" placeholder="Nombre">
                         <h4></h4>
-                        <input type="text" class="input" placeholder="Tu Email" required>
-                        <h4></h4>
-                        <input type="number" class="input" placeholder="Numero de Telefono" required>
-                        <h4></h4>
-                        <input type="password" class="input" placeholder="Contraseña" required>
-                        <h4></h4>
-                        <input type="password" class="input" placeholder="Confirma tu Contraseña" required>
+                        <small></small>
                     </div>
-                    <div class="formulario-bottom">
+
+                    <div class="form__field">
+                        <input type="text" class="input" id="apellido" placeholder="Apellido">
+                        <h4></h4>
+                        <small></small>
+                    </div>
+
+                    <div class="form__field">
+                        <input type="email" class="input" id="email" placeholder="Email" >
+                        <h4></h4>
+                        <small></small>
+                    </div>
+
+                    <div class="form__field">
+                        <input type="number" class="input" id="phone" placeholder="Numero de Telefono" >
+                        <h4></h4>
+                        <small></small>
+                    </div>
+
+                    <div class="form__field">
+                        <input type="password" class="input" id="password" placeholder="Contraseña" >
+                        <h4></h4>
+                        <small></small>
+                    </div>
+
+                    <div class="form__field">
                         <input type="submit" value="Crear Cuenta" class="btn-signup">
+                        <small></small>
+                        </div> 
                     </div>
-                    <p>Al registrarte estaras aceptando nuestros <a href="#">Terminos de servicio</a> y <a href="#">Politicas de la pagina.</a> Sin embargo, tu informacion personal continuara siendo confidencial para usted.</p>
-                </section>
-            </form>
+                <p>Al registrarte estaras aceptando nuestros <a href="#">Terminos de servicio</a> y <a href="#">Politicas de la pagina.</a> Sin embargo, tu informacion personal continuara siendo confidencial para usted.</p> 
+            <div id="message"></div>
+                </form>
         </main>
 
         <footer id="footer">
@@ -92,5 +113,7 @@
             <a href="https://www.youtube.com/" target="_blank"><img src="/Footer-imgs/Youtube 2.png" alt="Youtube Logo"></a>
     </div>
         </footer>
+
+        <script src="./JS/register.js"></script>
 </body>
 </html>

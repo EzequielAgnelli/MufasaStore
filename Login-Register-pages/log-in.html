@@ -7,7 +7,7 @@
     <title>Ingresar / Mufasa</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bitter:wght@200&family=Indie+Flower&family=Lato:wght@300&family=Lora&family=Manrope:wght@200&family=Mulish:wght@200&family=Nunito:wght@200;300&family=Open+Sans&family=PT+Sans&family=Poppins&family=Roboto:ital,wght@1,300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/Navbar/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
     <header>
@@ -29,28 +29,40 @@
         </header>
                                                                     <!-- HEADER Y NAVBAR -->
         <main>
-            <form>
-            <section id="formulario">
+            <form id="form" novalidate>
                 <div class="formulario-inicio">
                     <h1>Iniciar Sesión</h1>
                 </div>
+
                 <div class="formulario-top">
+                    <div class="form__field">
                     <h4></h4>
-                    <input type="text" class="input" placeholder="Email" required>
-                    <h4></h4>
-                    <input type="password" class="input" placeholder="Contraseña" required>
+                    <input type="email" class="input" id="email" placeholder="Email">
+                    <small></small>
                 </div>
+
+                <div class="form__field">
+                    <h4></h4>
+                    <input type="password" class="input" id="password" placeholder="Contraseña">
+                    <small></small>
+                </div>
+            </div>
+
                 <div class="formulario-bottom">
                     <label for="checkbox">Recordar Contraseña</label>
                     <input type="checkbox" id="checkbox" class="checkbox">
-                </div>
-                <input type="submit" value="Iniciar Sesión" class="btn-login">
+            </div>
+
+                <div class="form__field">
+                <input type="submit" value="Iniciar Sesión" class="btn-login" id="btn-login">
+            </div>
+
                 <div class="register">
                     <p>¿Aun no tienes una cuenta? <a href="/Login-Register-pages/registro.html">Registrate Aquí</a></p>
-                </div>
-            </section>
+                </div>   
+                <div id="message"></div>
         </form>
-        </main>
+    </main>
 
         <footer id="footer">
             <div class="container">
@@ -90,5 +102,7 @@
             <a href="https://www.youtube.com/" target="_blank"><img src="/Footer-imgs/Youtube 2.png" alt="Youtube Logo"></a>
     </div>
         </footer>
-</body>
+
+        <script src="./JS/login.js"></script>
+</body>   
 </html>

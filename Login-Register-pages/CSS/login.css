@@ -108,7 +108,7 @@ main {
     height: 100vh;
 }
 
-#formulario {
+#form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +171,7 @@ input[type='checkbox'] {
 }
 
 .btn-login {
-    width: 40%;
+    width: 100%;
     color: white;
     background-color: crimson;
     border-radius: 6.5px;
@@ -206,6 +206,50 @@ input[type='checkbox'] {
     color: black;
     font-weight: 800;
 }
+
+                                                                    /* JAVASCRIPT */
+.form__field.success input {
+border: 2px solid green;
+}
+
+.form__field.error input {
+border: 2px solid red;
+}
+
+.form__field small {
+color: red;
+max-width: 350px;
+text-align: center;
+display: none;
+font-weight: 800;
+margin-top: 8px;
+}
+
+#contactus-error {
+color: red;
+}
+
+#message.success {
+text-align: center;
+color: green;
+font-weight: 800;
+margin-top: 10px;
+}
+
+#message.error {
+text-align: center;
+color: red;
+font-weight: 800;   
+max-width: 250px;
+margin-top: 5px;
+}
+
+#message {
+    color: orange;
+    font-weight: 800;
+    margin-top: 5px;
+}
+
                                                                     /* FOOTER */
 #footer {
     display: flex;

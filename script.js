@@ -1,6 +1,6 @@
 // ------------ DOM generador de productos de la section PRODUCTS BY FILTER y categorias ------------ //
 const productsContainer = document.querySelector(".products-filter-container") //
-const btnLoad = document.querySelector(".btn-moreproducts") // Boton para renderizar mas productos en la seccion de products-filter-container.
+const btnLoad = document.querySelector(".btn-moreproducts")
 const categories = document.querySelector(".categories")
 const categoriesList = document.querySelectorAll(".category")
 // ------------ DOM encargado de llamar al Carrito, menu y demas elementos relacionados.  ------------ //
@@ -25,11 +25,6 @@ const formMessage = document.getElementById("message")
 // Funcion que crea el template de los productos.
 const createProductTemplate = (product) => {
 const {id, nombre, precio, marca, cardImg} = product
-// Formatear el precio para poder poner un signo de pesos ($).
-// const priceFormat = precio.toLocaleString("es-AR", {
-//     style: "currency",
-//     currency: "ARS"
-// }); Esto esta comentado porque me hice mucho problema. Todo era mas facil agregando un simple $ en las backticks.
 
 return `
 <div class="product-filter">
@@ -62,7 +57,7 @@ const moreProducts = () => {
 
 // Funcion para ver si el indice de productos renderizados es igual al del limite de estos mismos productos.
 const lastProducts = () => {
-    return appState.currentProducts === appState.limiteProducts -1; // limiteProducts viene de dataProducts (appState)
+    return appState.currentProducts === appState.limiteProducts - 1; // limiteProducts viene de dataProducts (appState)
 };
 
 // Funcion para renderizar la lista de productos.
@@ -72,16 +67,15 @@ const renderProducts = (productsList) => {
     .join('');
 };
 
-// Funcioniones para filtrar las Zapatillas por categoria. En este caso, por marcas.
-const filterByCategory = ({target}) => {
-    if(!inactiveFilters(target)) 
-    return
+// Funcioniones para filtrar las Zapatillas por categoria. En este caso, por marcas. (ApplyFilter)
+const ApplyfilterByCategory = ({target}) => {
+    if(!inactiveFilters(target)) return
     changeFilter(target)
     productsContainer.innerHTML = ''
     if(appState.activeFilter) {
         renderFilteredProducts()
         appState.currentProductsIndex = 0
-        return
+        return;
     }
     renderProducts(appState.products[0])
 };
@@ -91,32 +85,38 @@ const inactiveFilters = (element) => {
         element.classList.contains("category") &&
         !element.classList.contains("active")
     )
-};
-
-const changeFilter = (btn) => {
-    appState.activeFilter = btn.dataset.category
-    changeActiveBtnState(appState.activeFilter);
-
 }
 
-// Funcion para cambiar el estado de los botones.
-const changeActiveBtnState = (categorySelected) => {
-    const categories = [...categoriesList];
+const changeFilter = (btn) => {
+    appState.activeFilter = btn.dataset.category;
+    changeBtnState(appState.activeFilter);
+
+};
+
+const changeBtnState = (selectedCategory) => {
+    const categories = [...categoriesList]
     categories.forEach((categoryBtn) => {
-        if(categoryBtn.dataset.category !== categorySelected) {
-            categoryBtn.classList.remove("active")
-            return
+        if(categoryBtn.dataset.category !== selectedCategory) {
+            categoryBtn.classList.remove("active");
+            return;
         }
         categoryBtn.classList.add("active")
     })
+};
+
+const moreProductsBtnVisibility = () => {
+    if(!appState.activeFilter) {
+        btnLoad.classList.remove("hidden")
+        return
+    }
+    btnLoad.classList.add("hidden")
 }
 
 const renderFilteredProducts = () => {
-    const filteredProducts = productsData.filter(
-        (product) => product.category === appState.activeFilter
-    )
+    const filteredProducts = productsData.filter((product) => product.category === appState.activeFilter);
     renderProducts(filteredProducts)
 }
+
                                     // -------------------------- CARRITO Y MENU -------------------------- //
 
 // Activar el cart y si el menu esta abierto que se cierre el carrito.
@@ -338,7 +338,7 @@ const checkTextInput = (input) => {
     const minCharacters = 4;
     const maxCharacters = 20;
 
-    // Si el campo de LastName o Name estan vacios, este mensaje se va a mostrar.
+    // Si el campo de LastName o Name estan vacios, se va a mostrar este mensaje.
     if(isEmpty(input)) {
         showError(input, `Este campo es obligatorio.`);
         return
@@ -355,7 +355,7 @@ const checkTextInput = (input) => {
     showSuccess(input);
     valid = true;
     return valid;
-}
+};
 
 // Para setear cuando el input este vacio y se detecte.
 const isEmpty = (input) => {
@@ -454,7 +454,7 @@ const init = () => {
     // ---------------- LISTENERS PARA RENDERIZAR PRODUCTOS DE LA SECTION PRODUCTS BY FILTER Y FILTRAR POR CATEGORIA. ----------------  // 
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
-    categories.addEventListener("click", filterByCategory)
+    categories.addEventListener("click", ApplyfilterByCategory)
     // ---------------- LISTENERS DEL CARRITO, MENU Y RELACIONADOS. ----------------  //
     cartBtn.addEventListener("click", toggleCart) 
     menuBtn.addEventListener("click", toggleMenu) 

@@ -32,7 +32,7 @@ const  validAccount = () => {
     let valid = false 
 
     if(isEmpty(inputEmail)) {
-        showError("Porfavor, complete los campos requeridos.")
+        showError("Complete los datos requeridos.")
         return
     }
     if(!emailExists(inputEmail)) {
@@ -40,7 +40,7 @@ const  validAccount = () => {
         return
     }
     if(isEmpty(inputPassword)) {
-        showError("Porfavor, complete los campos requeridos.")
+        showError("Complete los datos requeridos.")
         return
     }
     if(!passwordExists(inputPassword)) {

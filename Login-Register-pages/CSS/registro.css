@@ -116,7 +116,7 @@ main {
     background-color: #fff;
     outline: 1px solid black;
     width: 420px;
-    height: 500px;
+    height: 600px;
 
 }
 
@@ -201,7 +201,7 @@ max-width: 350px;
 text-align: center;
 display: none;
 font-weight: 800;
-margin-top: 8px;
+margin-bottom: 5px;
 }
 
 #form-error {

@@ -1,6 +1,6 @@
 * {
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Assistant';
+    margin: auto;
 }
                                                                     /* ESTILOS A LA SCROLLBAR DEL BODY */
 body::-webkit-scrollbar {
@@ -195,7 +196,6 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
     outline: 1px solid black;
     margin-top: 15px;
 }
@@ -205,7 +205,6 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
 }
 
 .item-name {
@@ -220,6 +219,7 @@ header img {
 .item-price {
     font-size: 19.3px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .item-handler {
@@ -227,6 +227,7 @@ header img {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 30px;
 }
 
 .quantity-handler {
@@ -268,6 +269,7 @@ header img {
 
 .total {
     font-size: 19.5px;
+    margin-top: 15px;
 }
 
 .btn-cart {
@@ -344,8 +346,6 @@ display: block;
 .separador {
     outline: 2px solid crimson;
     width: 95px;
-    margin-top: 3px;
-    margin-bottom: 4rem;
 }
 
 .portada-info h1 {
@@ -412,8 +412,6 @@ display: block;
 .brands-title h2 {
     font-size: 27px;
     color: black;
-    margin-top: 14px;
-    padding: 20px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -423,7 +421,7 @@ display: block;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .brands-images img {
@@ -447,7 +445,6 @@ display: block;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 20px;
     font-weight: 800;
 }
 
@@ -466,7 +463,6 @@ display: block;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 10px;
     outline: 1px solid gray;
 }
 
@@ -485,13 +481,13 @@ display: block;
 
 .product-info-top p {
     font-weight: 800;
-    font-size: 19.5px;
+    font-size: 22.4px;
     color: black;
 }
 
 .product-info-top span {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 19px;
     color: black;
 }
 
@@ -565,7 +561,6 @@ display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
 }
 
 .catalogue-info h2 {
@@ -579,7 +574,7 @@ display: block;
 .catalogue-info p {
     width: 70%;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .catalogue-info a {
@@ -591,6 +586,7 @@ display: block;
     width: 20%;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 20px;
 }
 
 .catalogue-image {
@@ -619,7 +615,7 @@ display: block;
 }
 
 #most-sold h3 {
-    font-size: 27px;
+    font-size: 30px;
     color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -641,7 +637,6 @@ display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
     outline: 1px solid gray;
 }
 
@@ -656,19 +651,17 @@ display: block;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 5px;
-
 }
 
 .info-product_top p {
     font-weight: 800;
-    font-size: 19.5px;
+    font-size: 24.4px;
     color: black;
 }
 
 .info-product_top span {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 19px;
     color: black;
 }
 
@@ -686,7 +679,7 @@ display: block;
     background-color: crimson;
     border-radius: 7px;
     padding: 8px;
-    width: 70%;
+    width: 100%;
     text-transform: uppercase;
     text-align: center;
     border: none;
@@ -727,7 +720,6 @@ display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 4px;
     flex-wrap: wrap;
     padding: 10px;
 }
@@ -742,7 +734,7 @@ display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 7px;
+
     padding: 10px;
 }
 
@@ -832,13 +824,13 @@ display: block;
 
 .info-filter-top p {
     font-weight: 800;
-    font-size: 19.5px;
+    font-size: 22.4px;
     color: black;
 }
 
 .info-filter-top span {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 19px;
     text-transform: uppercase;
     color: black;
 }
@@ -947,10 +939,6 @@ min-height: 350px;
 width: 400px;
 height: 630px;
 }   
-
-.contactus-top h4 {
-    padding: 10px;
-}
 
 .contactus-top input {
     padding: 10px;

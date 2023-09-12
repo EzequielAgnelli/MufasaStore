@@ -1,7 +1,7 @@
 // ------------ DOM generador de productos de la section PRODUCTS BY FILTER y categorias ------------ //
 const productsContainer = document.querySelector(".products-filter-container") //
 const btnLoad = document.querySelector(".btn-moreproducts")
-const categories = document.querySelector(".categories")
+const categoriesContainerBtn = document.querySelector(".categories")
 const categoriesList = document.querySelectorAll(".category")
 // ------------ DOM encargado de llamar al Carrito, menu y demas elementos relacionados.  ------------ //
 const cartBtn = document.querySelector(".cart-label")
@@ -42,7 +42,8 @@ data-precio='${precio}'
 data-img='${cardImg}'>Agregar al carrito
 </button>
 </div> 
-</div>   `
+</div>
+`
 };
 
 // Funcion para mostrar mas productos en el boton de "Ver mas".
@@ -64,17 +65,17 @@ const lastProducts = () => {
 const renderProducts = (productsList) => {
     productsContainer.innerHTML += productsList
     .map(createProductTemplate)
-    .join('');
+    .join("");
 };
 
 // Funcioniones para filtrar las Zapatillas por categoria. En este caso, por marcas. (ApplyFilter)
 const ApplyfilterByCategory = ({target}) => {
     if(!inactiveFilters(target)) return
     changeFilter(target)
-    productsContainer.innerHTML = ''
+    productsContainer.innerHTML = '';
     if(appState.activeFilter) {
-        renderFilteredProducts()
-        appState.currentProductsIndex = 0
+        renderFilteredProducts();
+        appState.currentProductsIndex = 0;
         return;
     }
     renderProducts(appState.products[0])
@@ -84,13 +85,13 @@ const inactiveFilters = (element) => {
     return (
         element.classList.contains("category") &&
         !element.classList.contains("active")
-    )
-}
+    );
+};
 
 const changeFilter = (btn) => {
     appState.activeFilter = btn.dataset.category;
     changeBtnState(appState.activeFilter);
-
+    moreProductsBtnVisibility()
 };
 
 const changeBtnState = (selectedCategory) => {
@@ -115,7 +116,7 @@ const moreProductsBtnVisibility = () => {
 const renderFilteredProducts = () => {
     const filteredProducts = productsData.filter((product) => product.category === appState.activeFilter);
     renderProducts(filteredProducts)
-}
+};                  
 
                                     // -------------------------- CARRITO Y MENU -------------------------- //
 
@@ -454,7 +455,7 @@ const init = () => {
     // ---------------- LISTENERS PARA RENDERIZAR PRODUCTOS DE LA SECTION PRODUCTS BY FILTER Y FILTRAR POR CATEGORIA. ----------------  // 
     renderProducts(appState.products[0]);
     btnLoad.addEventListener("click", moreProducts) // Boton para renderizar mas productos. 
-    categories.addEventListener("click", ApplyfilterByCategory)
+    categoriesContainerBtn.addEventListener("click", ApplyfilterByCategory)
     // ---------------- LISTENERS DEL CARRITO, MENU Y RELACIONADOS. ----------------  //
     cartBtn.addEventListener("click", toggleCart) 
     menuBtn.addEventListener("click", toggleMenu) 

@@ -783,6 +783,14 @@ display: block;
     text-transform: uppercase;
 }
 
+.category.active {
+    background-color: #0245fd;
+}
+
+.category.active:hover {
+    box-shadow: 0 0 35px #0245fd;
+}
+
 .category:hover {
     box-shadow: 0 0 35px crimson;
 }
@@ -1112,7 +1120,7 @@ background-color: rgb(50, 50, 250);
 
     .navbar-links {
         position: absolute;
-        top: 75px;
+        top: 56px;
         right: 5%;
         left: 5%;
         width: 90%;

@@ -152,9 +152,8 @@ const divideProducts = (size) => {
 return listaDeProductos
 }
 
-// Concepto de ESTADO (State). Este va a guardar informacion y escuchar informacion.
 const appState = {
-    products: divideProducts(3), // El boton va a ir dividiendo mis productos en 3. 
+    products: divideProducts(3), // El boton va a ir dividiendo los productos en 3. 
     currentProducts: 0, // Que empiece en 0.
     limiteProducts: divideProducts(3).length,
     activeFilter: null 

@@ -789,6 +789,7 @@ display: block;
 
 .category.active:hover {
     box-shadow: 0 0 35px #0245fd;
+    transform: scale(1.2);
 }
 
 .category:hover {

@@ -10,7 +10,7 @@ const productsData = [
 
     {
     id: 2,
-    nombre: "Nike Air Force 1 Mid 07",
+    nombre: "Air Force 1 Mid 07",
     precio: 89999,
     category: "Nike",
     marca: "Nike",
@@ -19,7 +19,7 @@ const productsData = [
 
     {
     id: 3,
-    nombre: "Nike Air Max Pulse",
+    nombre: "Air Max Pulse",
     precio: 54999,
     category: "Nike",
     marca: "Nike",
@@ -28,7 +28,7 @@ const productsData = [
 
     {
     id: 4,
-    nombre: "Nike Dunk Low",
+    nombre: "Dunk Low",
     precio: 65999,
     category: "Nike",
     marca: "Nike",
@@ -118,7 +118,7 @@ const productsData = [
 
     {
         id: 14,
-        nombre: "Fila Renno Animal",
+        nombre: "Renno Animal",
         precio: 69340,
         category: "Fila",
         marca: "Fila",

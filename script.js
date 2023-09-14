@@ -46,19 +46,19 @@ data-img='${cardImg}'>Agregar al carrito
 `
 };
 
+// Funcion para ver si el indice de productos renderizados es igual al del limite de estos mismos productos.
+const lastProducts = () => {
+    return appState.currentProducts === appState.limiteProducts - 1; // limiteProducts viene de dataProducts (appState)
+};
+
 // Funcion para mostrar mas productos en el boton de "Ver mas".
 const moreProducts = () => {
-    appState.currentProducts +=1;
+    appState.currentProducts += 1;
     let {products, currentProducts} = appState
     renderProducts(products[currentProducts]); // Products y currentProducts vienen del JS de dataProducts (appState)
     if(lastProducts()) {
         btnLoad.classList.add("hidden")
     }
-}
-
-// Funcion para ver si el indice de productos renderizados es igual al del limite de estos mismos productos.
-const lastProducts = () => {
-    return appState.currentProducts === appState.limiteProducts - 1; // limiteProducts viene de dataProducts (appState)
 };
 
 // Funcion para renderizar la lista de productos.
@@ -68,17 +68,20 @@ const renderProducts = (productsList) => {
     .join("");
 };
 
-// Funcioniones para filtrar las Zapatillas por categoria. En este caso, por marcas. (ApplyFilter)
-const ApplyfilterByCategory = ({target}) => {
-    if(!inactiveFilters(target)) return
-    changeFilter(target)
+// Funciones para filtrar las Zapatillas por categoria. En este caso, por marcas. (ApplyFilter)
+const ApplyfilterByCategory = ({ target }) => {
+    if (!inactiveFilters(target)) return;
+    changeFilter(target);
     productsContainer.innerHTML = '';
-    if(appState.activeFilter) {
+    if (appState.activeFilter) {
         renderFilteredProducts();
         appState.currentProductsIndex = 0;
         return;
     }
-    renderProducts(appState.products[0])
+    
+    // Cuando el filtro es "Todos", restablece appState.currentProducts a 0.
+    appState.currentProducts = 0;
+    renderProducts(appState.products[0]);
 };
 
 const inactiveFilters = (element) => {
@@ -114,9 +117,11 @@ const moreProductsBtnVisibility = () => {
 }
 
 const renderFilteredProducts = () => {
-    const filteredProducts = productsData.filter((product) => product.category === appState.activeFilter);
-    renderProducts(filteredProducts)
-};                  
+    const filteredProducts = productsData.filter(
+        (product) => product.category === appState.activeFilter
+    );
+    renderProducts(filteredProducts);
+};         
 
                                     // -------------------------- CARRITO Y MENU -------------------------- //
 

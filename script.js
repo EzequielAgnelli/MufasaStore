@@ -193,10 +193,6 @@ const renderCart = () => {
 
 const createCartProductTemplate = (cartProduct) => {
     const {id, nombre, precio, img, quantity} = cartProduct
-    const priceFormat = precio.toLocaleString("es-AR", {
-        style: "currency",
-        currency: "ARS"
-    });
 
     return `<div class="cart-item">
     <img src=${img} alt="Zapatillas seleccionadas">

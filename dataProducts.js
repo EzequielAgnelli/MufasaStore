@@ -127,7 +127,7 @@ const productsData = [
 
     {
     id: 15,
-    nombre: "Gucci Ace con Tribanda - Mujer",
+    nombre: "Gucci Ace Tribanda - F",
     precio: 261015,
     category: "Gucci",
     marca: "Gucci",
@@ -136,7 +136,7 @@ const productsData = [
 
     {
     id: 16,
-    nombre: "Gucci Light con Tribanda - Hombre",
+    nombre: "Gucci Light Tribanda - M",
     precio: 261015,
     category: "Gucci",
     marca: "Gucci",

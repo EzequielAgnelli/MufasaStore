@@ -27,6 +27,15 @@ const productsData = [
     },
 
     {
+        id: 18,
+        nombre: "Air Max 97 OG",
+        precio: 89999,
+        category: "Nike",
+        marca: "Nike",
+        cardImg: './Products/Air-Max-97-OG.png',
+    },
+
+    {
     id: 4,
     nombre: "Dunk Low",
     precio: 65999,
@@ -63,6 +72,15 @@ const productsData = [
     },
 
     {
+    id: 17,
+    nombre: "Forum Bold",
+    precio: 58999,
+    category: "Adidas",
+    marca: "Adidas",
+    cardImg: './Products/Forum-Bold.png'
+    },
+
+    {
     id: 8,
     nombre: "Rebound",
     precio: 48999,
@@ -78,6 +96,15 @@ const productsData = [
     category: "Converse",
     marca: "Converse",
     cardImg: './Products/Fastbreak-Pro-Mid.png'
+    },
+
+    {
+        id: 20,
+        nombre: "Run Star Legacy CX",
+        precio: 100000,
+        category: "Converse",
+        marca: "Converse",
+        cardImg: './Products/Run-Star-Legacy-CX.png',
     },
 
     {
@@ -126,6 +153,15 @@ const productsData = [
     },
 
     {
+        id: 19,
+        nombre: "Electrowave 2",
+        precio: 41750,
+        category: "Fila",
+        marca: "Fila",
+        cardImg: './Products/Fila-Electrowave-2.png',
+    },
+
+    {
     id: 15,
     nombre: "Gucci Ace Tribanda - F",
     precio: 261015,
@@ -141,7 +177,7 @@ const productsData = [
     category: "Gucci",
     marca: "Gucci",
     cardImg: './Products/Gucci-Light-Tribanda.png'
-    }
+    },
 ];
 
 // Función para dividir los productos en arrays.

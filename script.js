@@ -289,6 +289,7 @@ const completePurchase = () => {
 const completeCartPurchase = (confirmMsg, successMsg) => {
     if(!cart.length) return;
     if(window.confirm(confirmMsg)) {
+        resetCart()
         alert(successMsg);
     };
 };
@@ -329,6 +330,11 @@ const quantityHandler = e => {
         handleMoreBtnEvent(e.target.dataset.id);
     };
     cartState();
+};
+
+const resetCart = () => {
+    cart = []
+    cartState()
 };
 
 // -------------------------- ACA EMPIEZA EL CODIGO DE VALIDACION DE LA SECCION CONTACT US. --------------------------// 

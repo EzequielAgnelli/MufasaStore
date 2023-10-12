@@ -223,9 +223,7 @@ const addProduct = (e) => {
     if(!e.target.classList.contains("btn-add")) 
         {return};
 
-    // Funcion para desestructurar.
     const product = createProductData(e.target.dataset);
-    //  Ahora compruebo si ya hay productos en el carro de compras. (Con una funcion auxiliar)
     if(isProductInCart(product)) {
         addUnitToProduct(product); 
         console.log("Product data:", product);
@@ -238,7 +236,7 @@ const addProduct = (e) => {
         cartState()
 };
 
-// Funcion desestructuradora
+// Desestructurar
 const createProductData = (product) => {
     const {id, nombre, precio, img} = product
     return {id, nombre, precio, img}
@@ -278,7 +276,6 @@ const cartState = () => {
     saveCart();
     renderCart();
     showCartTotalPrice();
-
 };
 
 // Al tocar el boton de "Terminar compra" saldra una alert con este texto.
@@ -309,10 +306,13 @@ const handleMoreBtnEvent = (id) => {
 const handleLessBtnEvent = (id) => {
     const existingCartProduct = cart.find((item) => item.id === id)
     if(existingCartProduct.quantity === 1) {
-        removeProductCart(existingCartProduct)
+        if(window.confirm("¿Desea eliminar el producto de su carrito?")) {
+            removeProductCart(existingCartProduct)
+        }
+        return
     }
     substractProductUnit(existingCartProduct);
-}
+};
 
 const substractProductUnit = (existingCartProduct) => {
     cart = cart.map((product) => {

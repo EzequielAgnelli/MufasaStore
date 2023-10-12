@@ -27,12 +27,12 @@ const productsData = [
     },
 
     {
-        id: 18,
-        nombre: "Air Max 97 OG",
-        precio: 89999,
-        category: "Nike",
-        marca: "Nike",
-        cardImg: './Products/Air-Max-97-OG.png',
+    id: 18,
+    nombre: "Air Max 97 OG",
+    precio: 89999,
+    category: "Nike",
+    marca: "Nike",
+    cardImg: './Products/Air-Max-97-OG.png',
     },
 
     {
@@ -64,7 +64,7 @@ const productsData = [
 
     {
     id: 7,
-    nombre: "Stan Smith x Andre Saraiva",
+    nombre: "Stan Smith x AS",
     precio: 36299,
     category: "Adidas",
     marca: "Adidas",
@@ -99,12 +99,12 @@ const productsData = [
     },
 
     {
-        id: 20,
-        nombre: "Run Star Legacy CX",
-        precio: 100000,
-        category: "Converse",
-        marca: "Converse",
-        cardImg: './Products/Run-Star-Legacy-CX.png',
+    id: 20,
+    nombre: "Run Star Legacy CX",
+    precio: 100000,
+    category: "Converse",
+    marca: "Converse",
+    cardImg: './Products/Run-Star-Legacy-CX.png',
     },
 
     {
@@ -144,21 +144,21 @@ const productsData = [
     },
 
     {
-        id: 14,
-        nombre: "Renno Animal",
-        precio: 69340,
-        category: "Fila",
-        marca: "Fila",
-        cardImg: './Products/Fila-Renno-Animal.png'
+    id: 14,
+    nombre: "Renno Animal",
+    precio: 69340,
+    category: "Fila",
+    marca: "Fila",
+    cardImg: './Products/Fila-Renno-Animal.png'
     },
 
     {
-        id: 19,
-        nombre: "Electrowave 2",
-        precio: 41750,
-        category: "Fila",
-        marca: "Fila",
-        cardImg: './Products/Fila-Electrowave-2.png',
+    id: 19,
+    nombre: "Electrowave 2",
+    precio: 41750,
+    category: "Fila",
+    marca: "Fila",
+    cardImg: './Products/Fila-Electrowave-2.png',
     },
 
     {

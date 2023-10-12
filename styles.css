@@ -52,8 +52,7 @@ body::-webkit-scrollbar-thumb {
 
 .portada-info p {
     opacity: 1;
-    animation: SlideInLeft 1s ease-in 0s 1;
-    /* Nombre de la animacion, duracion de la animacion, tipo de animacion, delay de la animacion, veces que quiero que se repita */
+    animation: SlideInLeft 1s ease-in 0s 1; /* Nombre de la animacion, duracion de la animacion, tipo de animacion, delay de la animacion, veces que quiero que se repita */
 }
 
 .portada-info h1 {
@@ -83,9 +82,6 @@ header {
     align-items: center;
     height: 75px;
     width: 100%;
-    /* background: #232526;  
-    background: -webkit-linear-gradient(to right, #414345, #232526); 
-    background: linear-gradient(to right, #414345, #232526);  */
     background: #0F2027; 
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
@@ -162,7 +158,6 @@ header img {
     gap: 30px;
     height: calc(100vh - 75px);
     overflow-y: scroll;
-    /* display: none; */
     z-index: 2;
     border-left: 1px solid crimson;
     background-color: #fff;
@@ -182,7 +177,6 @@ header img {
 }
 
 #cart-toggle:checked + .cart {
-    /* display: flex; */
     transform: translate(0);
     transition: all 0.4s cubic-bezier(0.92, 0.01, 0.35, 0.99); 
 }
@@ -201,7 +195,7 @@ header img {
 }
 
 .cart-img {
-    min-width: 350px;
+    min-width: 240px;
 }
 
 .item-info {
@@ -510,7 +504,6 @@ display: block;
     width: 100%;
 }
 
-
 .product-info-bot p {
     color: #ed6800;
     font-size: 18px;
@@ -518,6 +511,7 @@ display: block;
     text-transform: uppercase;
     margin-bottom: 8px;
 }
+
 /* EN UN FUTURO, ESTO LO VOY A SACAR. */
 .product-info-bot button {
     color: white;
@@ -735,7 +729,6 @@ display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     padding: 10px;
 }
 
@@ -971,8 +964,7 @@ form input[type="text"], form input[type="email"] {
     padding: 10px;
     width: 250px;
     border: 1px solid black;
-    /* El resize none es para que no se pueda agrandar el text area. */
-    resize: none;
+    resize: none; /* El resize none es para que no se pueda agrandar el text area. */
     font-family: 'Assistant';
     font-weight: 800;
 }
@@ -1113,7 +1105,6 @@ background-color: rgb(50, 50, 250);
 }
 
                                                                     /* MEDIAQUERIES */ 
-
                                                                             /* MONITORES 1366X768 */
 @media (max-width: 1366px) {
     .most-sold-container {
@@ -1130,30 +1121,30 @@ background-color: rgb(50, 50, 250);
 @media (max-width: 992px) {
                             /* NAVBAR */
     .header {
-        gap: 15px;
-    }
+    gap: 15px;
+}
 
     .navbar-links {
-        position: absolute;
-        top: 56px;
-        right: 5%;
-        left: 5%;
-        width: 90%;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        background: #757F9A;  
-        background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
-        background: linear-gradient(to right, #D7DDE8, #757F9A);
-        border-radius: 0px 0px 15px 15px;
-        border-top: none;
-        padding: 25px 15px;
-        gap: 15px;
-        z-index: 2;
-        display: none;
-        border: 1px solid black;
-        border-top: none;
-    }
+    position: absolute;
+    top: 56px;
+    right: 5%;
+    left: 5%;
+    width: 90%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    background: #757F9A;  
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
+    background: linear-gradient(to right, #D7DDE8, #757F9A);
+    border-radius: 0px 0px 15px 15px;
+    border-top: none;
+    padding: 25px 15px;
+    gap: 15px;
+    z-index: 2;
+    display: none;
+    border: 1px solid black;
+    border-top: none;
+}
 
                             /* MENU */
 .menu-label {
@@ -1292,6 +1283,11 @@ display: flex;
     align-items: center;
 }
 
+.product-sold {
+    width: 240px;
+    height: 521px;
+}
+
 .product-sold img {
     width: 240px;
     height: 240px;
@@ -1310,10 +1306,6 @@ display: flex;
 }
 
                             /* INFO-HELP */
-#info-help {
-    background-color: transparent;
-}
-
 .info-container {
     justify-content: center;
     align-items: center;
@@ -1372,6 +1364,27 @@ display: flex;
 
 .add-popup {
     text-align: center;
+}
+
+                                /* PRODUCTS BY FILTER */
+
+.product-filter {
+    width: 240px;
+    height: 525px;
+}
+
+.product-filter img {
+    width: 240px;
+    height: 240px;
+}
+
+.product-filter p {
+    text-align: center;
+}
+
+.btn-add {
+    width: 120px;
+    height: 54px;
 }
 }
 
@@ -1446,7 +1459,7 @@ text-align: center;
 .catalogue-image img {
     width: 240px;
     height: 240px;
-    }
+}
 
                                     /* PRODUCTS BY FILTER */
 .product-filter img {
@@ -1464,30 +1477,50 @@ text-align: center;
 }
 
 @media (max-width: 360px) {
+                            /* CART STYLES */
+    .cart {
+        padding: 2px;
+}
 
+    .cart h2 {
+        text-align: center;
+}
+
+    .total-cart p {
+        margin-left: 10px;
+    }
+    .total {
+        margin-right: 10px;
+}
+
+    .btn-cart button {
+        margin-bottom: 5px;
+}
+
+                            /* CATALOGUE */
     .catalogue-info p {
         width: 75%;
-    }
+}
 
     .catalogue-image img {
-        width: 150px;
-        height: 150px;
-    }
+    width: 150px;
+    height: 150px;
+}
 }
                                                                             /* DEMAS PANTALLAS */
 
 @media (max-width: 1280px) {
     .most-sold-container {
-        flex-wrap: wrap;
-        align-items: center;
-    }
+    flex-wrap: wrap;
+    align-items: center;
+}
 }
 
                                                                             /* 1600 PIXELES */
 
 @media (max-width: 1600px) {
     .most-sold-container {
-        flex-wrap: wrap;
-        align-items: center;
-    }
+    flex-wrap: wrap;
+    align-items: center;
+}
 }

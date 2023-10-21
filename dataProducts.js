@@ -9,6 +9,33 @@ const productsData = [
     },
 
     {
+        id: 21,
+        nombre: "Air Jordan 1 High",
+        precio: 99999,
+        category: "Nike",
+        marca: "Nike",
+        cardImg: './Products/Air-Jordan-1-High.png',
+    },
+
+    {
+        id: 22,
+        nombre: "Air Force 1 Low Retro",
+        precio: 74999,
+        category: "Nike",
+        marca: "Nike",
+        cardImg: './Products/Nike-Air-Force-1-Low-Retro.png',
+    },
+
+    {
+        id: 23,
+        nombre: 'Air Max SC',
+        precio: '39999',
+        category: "Nike",
+        marca: "Nike",
+        cardImg: './Products/Nike-Air-Max-SC.png',
+    },
+
+    {
     id: 2,
     nombre: "Air Force 1 Mid 07",
     precio: 89999,
@@ -60,6 +87,15 @@ const productsData = [
     category: "Adidas",
     marca: "Adidas",
     cardImg: './Products/Ultraboost-Light-JS.png'
+    },
+
+    {
+        id: 25,
+        nombre: 'Forum Mid',
+        precio: 43099,
+        category: 'Adidas',
+        marca: 'Adidas',
+        cardImg: './Products/Forum-Mid.png',
     },
 
     {
@@ -123,6 +159,15 @@ const productsData = [
     category: "Puma",
     marca: "Puma",
     cardImg: './Products/Suede-Classic-XXI.png'
+    },
+
+    {
+        id: 24,
+        nombre: 'Rider FV Fandom',
+        precio: '40499',
+        category: 'Puma',
+        marca: 'Puma',
+        cardImg: './Products/Zapatillas-Rider-FV-Fandom.png',
     },
 
     {
